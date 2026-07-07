@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>曾櫳震 個人網頁｜風格示意</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Charis+SIL:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F2E7;      /* 竹紙 */
+    --paper-deep: #EDE7D6; /* 紙影 */
+    --ink: #211E19;        /* 墨 */
+    --ink-light: #6E6659;  /* 淡墨 */
+    --cinnabar: #A8382A;   /* 硃砂 */
+    --rule: #D8D0BC;       /* 界欄線 */
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif TC', 'Songti TC', 'PMingLiU', '新細明體', serif;
+    line-height: 1.9;
+    font-size: 17px;
+  }
+  .ipa { font-family: 'Charis SIL', 'Gentium Plus', 'Doulos SIL', 'Noto Serif TC', serif; }
+
+  /* ── 版心：仿線裝書的界欄 ── */
+  .frame {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── 頁首 ── */
+  header {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .header-inner {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 18px 0 14px;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+  }
+  .site-name {
+    font-size: 21px;
+    font-weight: 900;
+    letter-spacing: .18em;
+  }
+  .site-name .seal-dot {
+    display: inline-block;
+    width: 10px; height: 10px;
+    background: var(--cinnabar);
+    margin-left: 10px;
+    transform: translateY(-2px) rotate(45deg);
+  }
+  nav ul {
+    display: flex;
+    gap: 26px;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+  nav a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 15.5px;
+    letter-spacing: .12em;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+    transition: border-color .2s;
+  }
+  nav a:hover, nav a:focus-visible { border-bottom-color: var(--cinnabar); outline: none; }
+  nav a.current { border-bottom-color: var(--cinnabar); color: var(--cinnabar); }
+
+  /* ── 首屏 ── */
+  .hero {
+    position: relative;
+    padding: 96px 0 84px;
+    border-bottom: 1px solid var(--rule);
+    overflow: hidden;
+  }
+  .hero-vertical {
+    position: absolute;
+    right: 8px;
+    top: 72px;
+    writing-mode: vertical-rl;
+    letter-spacing: .5em;
+    font-size: 14px;
+    color: var(--ink-light);
+    border-right: 1px solid var(--rule);
+    padding-right: 14px;
+    user-select: none;
+  }
+  .hero h1 {
+    font-size: clamp(44px, 8vw, 84px);
+    font-weight: 900;
+    letter-spacing: .12em;
+    line-height: 1.25;
+  }
+  .hero .name-ipa {
+    display: block;
+    margin-top: 14px;
+    font-size: clamp(15px, 2.2vw, 19px);
+    color: var(--ink-light);
+    letter-spacing: .06em;
+  }
+  .hero .intro {
+    margin-top: 34px;
+    max-width: 34em;
+    font-size: 17.5px;
+    color: var(--ink);
+  }
+  .hero .intro em {
+    font-style: normal;
+    border-bottom: 3px double var(--cinnabar);
+  }
+  .seal {
+    display: inline-flex;
+    margin-top: 40px;
+    border: 2.5px solid var(--cinnabar);
+    color: var(--cinnabar);
+    writing-mode: vertical-rl;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: .3em;
+    padding: 12px 8px 8px;
+    line-height: 1.4;
+  }
+
+  /* ── 章節標題：以趙元任聲調符號為記 ── */
+  section { padding: 64px 0; border-bottom: 1px solid var(--rule); }
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 34px;
+  }
+  .tone-mark {
+    font-family: 'Charis SIL', 'Gentium Plus', serif;
+    font-size: 30px;
+    color: var(--cinnabar);
+    line-height: 1;
+    user-select: none;
+  }
+  .sec-head h2 {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: .22em;
+  }
+  .sec-head .sec-sub {
+    font-size: 13.5px;
+    color: var(--ink-light);
+    letter-spacing: .1em;
+  }
+
+  /* ── 最新消息 ── */
+  .news-item {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 20px;
+    padding: 16px 0;
+    border-top: 1px dashed var(--rule);
+  }
+  .news-item:last-child { border-bottom: 1px dashed var(--rule); }
+  .news-date {
+    color: var(--cinnabar);
+    font-size: 15px;
+    letter-spacing: .05em;
+    font-variant-numeric: tabular-nums;
+  }
+  .news-body { font-size: 16.5px; }
+
+  /* ── 著作選 ── */
+  .pub {
+    padding: 18px 22px;
+    margin-bottom: 14px;
+    background: var(--paper-deep);
+    border-left: 3px solid var(--cinnabar);
+  }
+  .pub .pub-type {
+    font-size: 13px;
+    color: var(--ink-light);
+    letter-spacing: .2em;
+    margin-bottom: 4px;
+  }
+  .pub .pub-title { font-size: 17px; font-weight: 600; }
+  .pub .pub-note { font-size: 14.5px; color: var(--ink-light); margin-top: 4px; }
+
+  /* ── 文學作品預覽 ── */
+  .lit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+  }
+  .lit-card {
+    border: 1px solid var(--rule);
+    padding: 26px 24px 22px;
+    background: #FBF8F0;
+    position: relative;
+  }
+  .lit-card::before {
+    content: attr(data-tone);
+    position: absolute;
+    top: 14px; right: 16px;
+    font-family: 'Charis SIL', serif;
+    color: var(--rule);
+    font-size: 22px;
+  }
+  .lit-card h3 { font-size: 19px; font-weight: 600; letter-spacing: .1em; }
+  .lit-card p { font-size: 15px; color: var(--ink-light); margin-top: 10px; }
+  .lit-card a {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--cinnabar);
+    text-decoration: none;
+    font-size: 14.5px;
+    letter-spacing: .1em;
+  }
+  .lit-card a:hover { text-decoration: underline; }
+
+  /* ── 頁尾 ── */
+  footer {
+    padding: 44px 0 56px;
+    color: var(--ink-light);
+    font-size: 14px;
+    letter-spacing: .06em;
+  }
+  footer .tone-row {
+    font-family: 'Charis SIL', serif;
+    color: var(--rule);
+    font-size: 20px;
+    letter-spacing: .4em;
+    margin-bottom: 14px;
+    user-select: none;
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 64px 0 56px; }
+    .hero-vertical { display: none; }
+    .news-item { grid-template-columns: 1fr; gap: 4px; }
+    nav ul { gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="frame header-inner">
+    <div class="site-name">曾櫳震<span class="seal-dot" aria-hidden="true"></span></div>
+    <nav aria-label="主選單">
+      <ul>
+        <li><a href="#" class="current">首頁</a></li>
+        <li><a href="#">關於我</a></li>
+        <li><a href="#">經歷</a></li>
+        <li><a href="#">著作</a></li>
+        <li><a href="#">文學作品</a></li>
+        <li><a href="#">連結</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="frame">
+      <span class="hero-vertical" aria-hidden="true">客語研究・田野・文學</span>
+      <h1>曾櫳震</h1>
+      <span class="name-ipa ipa">〔此處可放海陸腔姓名標音，由你提供正確調值〕</span>
+      <p class="intro">客家語言學研究者。關注<em>海陸客家話</em>的語音接觸與世代變異，兼事客語薪傳教學、田野調查與文學書寫。〔示意文字，正式版由你定稿〕</p>
+      <div class="seal" aria-hidden="true">聲入心通</div>
+    </div>
+  </div>
+
+  <section>
+    <div class="frame">
+      <div class="sec-head">
+        <span class="tone-mark" aria-hidden="true">˥˧</span>
+        <h2>最新消息</h2>
+        <span class="sec-sub">NEWS</span>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2026.06</div>
+        <div class="news-body">碩士學位論文口試通過（示意條目）</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2026.05</div>
+        <div class="news-body">受邀於○○擔任客語朗讀指導（示意條目）</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2026.03</div>
+        <div class="news-body">論文投稿《○○○○》審查中（示意條目）</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="frame">
+      <div class="sec-head">
+        <span class="tone-mark" aria-hidden="true">˧˩</span>
+        <h2>著作選</h2>
+        <span class="sec-sub">PUBLICATIONS</span>
+      </div>
+      <div class="pub">
+        <div class="pub-type">學位論文</div>
+        <div class="pub-title">〔碩士論文題目——由正式版填入〕</div>
+        <div class="pub-note">國立清華大學（示意條目）</div>
+      </div>
+      <div class="pub">
+        <div class="pub-type">期刊論文</div>
+        <div class="pub-title">〔論文題目——投稿中暫不公開〕</div>
+        <div class="pub-note">審查中（示意條目）</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="frame">
+      <div class="sec-head">
+        <span class="tone-mark" aria-hidden="true">˨˦</span>
+        <h2>文學作品</h2>
+        <span class="sec-sub">WRITINGS</span>
+      </div>
+      <div class="lit-grid">
+        <div class="lit-card" data-tone="˥">
+          <h3>散文</h3>
+          <p>客語散文創作，含朗讀訓練文本。（示意）</p>
+          <a href="#">閱讀篇目 →</a>
+        </div>
+        <div class="lit-card" data-tone="˥˧">
+          <h3>報導文學</h3>
+          <p>田野現場的紀實書寫。（示意）</p>
+          <a href="#">閱讀篇目 →</a>
+        </div>
+        <div class="lit-card" data-tone="˧˩">
+          <h3>客語三行詩</h3>
+          <p>五・七・七，聲調自成韻律。（示意）</p>
+          <a href="#">閱讀篇目 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="frame">
+    <div class="tone-row" aria-hidden="true">˥ ˥˧ ˧˩ ˨˦ ˧ ˩</div>
+    © 2026 曾櫳震（Tsên Lûng-tsṳ́n）｜本頁為風格示意，內容非正式版
+  </div>
+</footer>
+
+</body>
+</html>
