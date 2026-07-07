@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>聯絡資訊｜曾櫳震 個人網頁</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Charis+SIL:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F2E7;
+    --paper-deep: #EDE7D6;
+    --ink: #211E19;
+    --ink-light: #6E6659;
+    --cinnabar: #A8382A;
+    --rule: #D8D0BC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif TC', 'Songti TC', 'PMingLiU', 'PMingLiU-ExtB', '新細明體-ExtB', serif;
+    line-height: 1.9;
+    font-size: 17px;
+  }
+  .frame { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  header {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .header-inner {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 18px 0 14px; flex-wrap: wrap; gap: 8px 24px;
+  }
+  .site-name { font-size: 21px; font-weight: 900; letter-spacing: .18em; }
+  .site-name a { color: var(--ink); text-decoration: none; }
+  .site-name .seal-dot {
+    display: inline-block; width: 10px; height: 10px;
+    background: var(--cinnabar); margin-left: 10px;
+    transform: translateY(-2px) rotate(45deg);
+  }
+  nav.main-nav ul { display: flex; gap: 26px; list-style: none; flex-wrap: wrap; }
+  nav.main-nav a {
+    color: var(--ink); text-decoration: none;
+    font-size: 15.5px; letter-spacing: .12em;
+    padding-bottom: 3px; border-bottom: 2px solid transparent;
+    transition: border-color .2s;
+  }
+  nav.main-nav a:hover, nav.main-nav a:focus-visible { border-bottom-color: var(--cinnabar); outline: none; }
+  nav.main-nav a.current { border-bottom-color: var(--cinnabar); color: var(--cinnabar); }
+
+  .page-head { padding: 64px 0 40px; border-bottom: 1px solid var(--rule); }
+  .page-head h1 {
+    font-size: clamp(30px, 5vw, 42px);
+    font-weight: 900; letter-spacing: .3em;
+  }
+  .wave-mark {
+    height: 26px; width: auto;
+    margin-right: 16px;
+    vertical-align: -3px;
+  }
+  .page-head .page-sub {
+    color: var(--ink-light); font-size: 14px;
+    letter-spacing: .15em; margin-top: 6px;
+  }
+
+  .contact-table { padding: 44px 0 8px; }
+  .contact-row {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 24px;
+    padding: 22px 6px;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .contact-row:first-child { border-top: 1px solid var(--rule); }
+  .contact-row dt {
+    color: var(--ink-light);
+    font-size: 15px;
+    letter-spacing: .15em;
+  }
+  .contact-row dd { font-size: 17px; }
+  .contact-row dd .note {
+    display: block;
+    font-size: 14.5px;
+    color: var(--ink-light);
+    margin-top: 6px;
+  }
+  .contact-row a { color: var(--cinnabar); text-decoration: none; }
+  .contact-row a:hover { text-decoration: underline; }
+  .mail-line { display: block; padding: 2px 0; }
+
+  footer {
+    padding: 44px 0 56px;
+    color: var(--ink-light);
+    font-size: 14px; letter-spacing: .06em;
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+  }
+  footer .wave-foot {
+    height: 22px; width: auto;
+    opacity: .45;
+    display: block;
+    margin-bottom: 14px;
+  }
+  footer a { color: var(--ink-light); }
+
+  @media (max-width: 640px) {
+    nav.main-nav ul { gap: 16px; }
+    .contact-row { grid-template-columns: 1fr; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="frame header-inner">
+    <div class="site-name"><a href="index.html">曾櫳震</a><span class="seal-dot" aria-hidden="true"></span></div>
+    <nav class="main-nav" aria-label="主選單">
+      <ul>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">關於我</a></li>
+        <li><a href="experience.html">經歷</a></li>
+        <li><a href="publications.html">著作</a></li>
+        <li><a href="writings.html">文學作品</a></li>
+        <li><a href="interests.html">專長與興趣</a></li>
+        <li><a href="links.html">推薦網站連結</a></li>
+        <li><a href="contact.html" class="current">聯絡資訊</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="frame">
+    <div class="page-head">
+      <h1><img class="wave-mark" src="image/soundwave-cinnabar.png" alt="" aria-hidden="true">聯絡資訊</h1>
+      <div class="page-sub">CONTACT</div>
+    </div>
+
+    <dl class="contact-table">
+      <div class="contact-row">
+        <dt>通訊地址</dt>
+        <dd>請來信（訊）洽詢</dd>
+      </div>
+      <div class="contact-row">
+        <dt>電子郵件</dt>
+        <dd>
+          <a class="mail-line" href="mailto:liungzhin@gapp.nthu.edu.tw">liungzhin@gapp.nthu.edu.tw</a>
+          <a class="mail-line" href="mailto:zeng.liungzhin@gmail.com">zeng.liungzhin@gmail.com</a>
+        </dd>
+      </div>
+      <div class="contact-row">
+        <dt>聯絡電話</dt>
+        <dd>研究室　03-510-1091</dd>
+      </div>
+      <div class="contact-row">
+        <dt>Instagram</dt>
+        <dd><a href="https://www.instagram.com/brian.liung_07/" target="_blank" rel="noopener">brian.liung_07</a></dd>
+      </div>
+    </dl>
+  </div>
+</main>
+
+<footer>
+  <div class="frame">
+    <img class="wave-foot" src="image/soundwave-ink.png" alt="" aria-hidden="true">
+    © 2026 曾櫳震（Tseng Brian Liungzhin）｜<a href="sitemap.html">網站地圖</a>
+  </div>
+</footer>
+
+</body>
+</html>
