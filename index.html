@@ -102,6 +102,24 @@
     padding-right: 14px;
     user-select: none;
   }
+  .hero-grid {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .hero-text { flex: 1 1 480px; min-width: 0; }
+  .hero-emblem {
+    flex: 0 0 auto;
+    display: block;
+    margin-top: 10px;
+  }
+  .hero-emblem img {
+    width: 190px;
+    height: auto;
+    display: block;
+  }
   .hero h1 {
     font-size: clamp(44px, 8vw, 84px);
     font-weight: 900;
@@ -115,6 +133,8 @@
     color: var(--ink-light);
     letter-spacing: .06em;
   }
+  .intro-block { margin-top: 36px; max-width: 36em; }
+  .intro-block p { font-size: 17.5px; margin-bottom: 10px; }
   .hero .intro {
     margin-top: 34px;
     max-width: 34em;
@@ -162,6 +182,15 @@
   }
 
   /* ── 最新消息 ── */
+  .news-group {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: .15em;
+    color: var(--cinnabar);
+    margin: 26px 0 6px;
+  }
+  .news-group:first-of-type { margin-top: 0; }
+  .news-body a { color: var(--cinnabar); }
   .news-item {
     display: grid;
     grid-template-columns: 110px 1fr;
@@ -218,6 +247,66 @@
   }
   .lit-card a:hover { text-decoration: underline; }
 
+  /* ── 遷站公告條(暫時性,預計2026年9月移除) ── */
+  .site-notice {
+    margin-top: 40px;
+    padding: 14px 22px;
+    background: var(--paper-deep);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--cinnabar);
+    font-size: 16px;
+    letter-spacing: .04em;
+  }
+
+  /* ── 精選連結卡片 ── */
+  .link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 14px;
+  }
+  .link-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 16px;
+    background: #FBF8F0;
+    border: 1px solid var(--rule);
+    text-decoration: none;
+    color: var(--ink);
+    transition: border-color .15s, background .15s;
+  }
+  .link-card:hover, .link-card:focus-visible {
+    border-color: var(--cinnabar);
+    background: var(--paper-deep);
+    outline: none;
+  }
+  .link-card:hover .card-name { color: var(--cinnabar); }
+  .card-logo {
+    width: 40px; height: 40px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .card-logo img { width: 30px; height: 30px; object-fit: contain; }
+  .card-logo .fallback {
+    width: 11px; height: 11px;
+    background: var(--cinnabar);
+    transform: rotate(45deg);
+  }
+  .card-text { min-width: 0; }
+  .card-name {
+    font-size: 15.5px; font-weight: 600;
+    letter-spacing: .02em; line-height: 1.5;
+    display: block;
+  }
+  .card-desc {
+    font-size: 12.5px; color: var(--ink-light);
+    display: block; line-height: 1.5; margin-top: 2px;
+  }
+
   /* ── 頁尾 ── */
   footer {
     padding: 44px 0 56px;
@@ -234,8 +323,21 @@
 
   @media (max-width: 640px) {
     .hero { padding: 64px 0 56px; }
+    .hero-emblem { margin: 0 auto; }
+    .hero-emblem img { width: 150px; }
+    .link-grid { grid-template-columns: 1fr 1fr; }
+    .link-card { flex-direction: column; text-align: center; padding: 18px 10px; }
     .hero-vertical { display: none; }
-    .news-item { grid-template-columns: 1fr; gap: 4px; }
+    .news-group {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: .15em;
+    color: var(--cinnabar);
+    margin: 26px 0 6px;
+  }
+  .news-group:first-of-type { margin-top: 0; }
+  .news-body a { color: var(--cinnabar); }
+  .news-item { grid-template-columns: 1fr; gap: 4px; }
     nav ul { gap: 16px; }
   }
 </style>
@@ -244,7 +346,7 @@
 
 <header>
   <div class="frame header-inner">
-    <div class="site-name">曾櫳震<span class="seal-dot" aria-hidden="true"></span></div>
+    <div class="site-name">櫳震的個人網頁<span class="en">BRIAN</span><span class="seal-dot" aria-hidden="true"></span></div>
     <nav aria-label="主選單">
       <ul>
         <li><a href="index.html" class="current">首頁</a></li>
@@ -262,12 +364,26 @@
 
 <main>
   <div class="hero">
-    <div class="frame">
-      <span class="hero-vertical" aria-hidden="true">客語研究・田野・文學</span>
+    <div class="frame hero-grid">
+      <div class="hero-text">
       <h1>曾櫳震</h1>
       <span class="name-ipa ipa">zen⁵³ liung⁵⁵ zhin²⁴｜IPA [tsen⁵³ liuŋ⁵⁵ tʃin²⁴]</span>
-      <p class="intro">客家語言學研究者。關注<em>海陸客家話</em>的語音接觸與世代變異，兼事客語薪傳教學、田野調查與文學書寫。</p>
-      <div class="seal" aria-hidden="true">聲入心通</div>
+      <div class="intro-block">
+        <p>您好！我是櫳震Brian，歡迎來到我的網頁。</p>
+        <p>我是一名關注臺灣語言、文化與教育的研究者，主要從事語音學與社會語言學相關的研究；我也持續參與臺灣語言教學與地方文化記錄。</p>
+        <p>網站中整理了我的研究、教學與書寫，保存了我對語言、土地與人的觀察。而我希望這裡不單是成果的陳列，也是一個讓知識與文化繼續流動的地方。</p>
+      </div>
+      </div>
+      <a class="hero-emblem" href="about.html#emblem" title="識別標誌與姓名意涵">
+        <img src="image/emblem.png" alt="曾櫳震個人識別標誌" onerror="this.parentNode.style.display='none'">
+      </a>
+    </div>
+  </div>
+
+  <!-- 遷站公告:曾櫳震預計2026年9月移除本區塊(刪除 site-notice 整個 div 即可) -->
+  <div class="frame">
+    <div class="site-notice">
+      原個人網頁因伺服器停止服務，網站遷移至現址，即起正式啟用。
     </div>
   </div>
 
@@ -278,51 +394,77 @@
         <h2>最新消息</h2>
         <span class="sec-sub">NEWS</span>
       </div>
+      <h3 class="news-group">學術活動．學習資源</h3>
       <div class="news-item">
-        <div class="news-date">2026.07</div>
-        <div class="news-body">個人網站遷移至新址，各頁內容建置中，陸續上線。</div>
+        <div class="news-body">＊客家委員會建置 十二年國教客語文線上學習網<a href="https://12basic.hakka.gov.tw/" target="_blank" rel="noopener">【來上客】</a>。</div>
+      </div>
+      <div class="news-item">
+        <div class="news-body">＊新北市客語文輔導團研發<a href="https://digimagic2022.url.tw/hakka12/" target="_blank" rel="noopener">【客家節慶拼拼樂】</a>客語數位教材。</div>
+      </div>
+      <div class="news-item">
+        <div class="news-body">＊第十六屆臺灣語言及其教學國際學術研討會：台灣語言的變異、記錄及理論建構。<a href="https://sites.google.com/view/istlt16/%E9%A6%96%E9%A0%81?pli=1" target="_blank" rel="noopener">【會議網站】</a></div>
+      </div>
+      <h3 class="news-group">講座．各類活動消息</h3>
+      <div class="news-item">
+        <div class="news-body">＊2026年度客家大戲【銅鑼響起時】7/18起全台巡演。<a href="https://hakkaevent.com.tw/" target="_blank" rel="noopener">【活動網站】</a></div>
+      </div>
+      <div class="news-item">
+        <div class="news-body">＊客家委員會公告115年客語能力認證日程。<a href="https://www.hakka.gov.tw/chhakka/app/data/view?module=hotnews&id=25&serno=5d4985e0-4f50-4cc0-b15d-8ea360f58d1c" target="_blank" rel="noopener">【認證時程公告】</a></div>
+      </div>
+      <h3 class="news-group">其他消息</h3>
+      <div class="news-item">
+        <div class="news-body">＊財團法人客家公共傳播基金會所屬【客新聞】「寫客文」單元長期徵稿。<a href="https://hakkanews.tw/2022/03/31/12804/" target="_blank" rel="noopener">【徵稿辦法】</a></div>
       </div>
     </div>
   </section>
+
 
   <section>
     <div class="frame">
       <div class="sec-head">
         <img class="wave-mark" src="image/soundwave-cinnabar.png" alt="" aria-hidden="true">
-        <h2>著作選</h2>
-        <span class="sec-sub">PUBLICATIONS</span>
+        <h2>精選連結</h2>
+        <span class="sec-sub">FEATURED LINKS</span>
       </div>
-      <div class="pub">
-        <div class="pub-type">建置中</div>
-        <div class="pub-title">著作目錄整理中，即將上線。</div>
+      <div class="link-grid">
+        <a class="link-card" href="https://hakkadict.moe.edu.tw/" target="_blank" rel="noopener">
+          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=hakkadict.moe.edu.tw&sz=64" alt="" loading="lazy" onerror="this.outerHTML='<span class=fallback></span>'"></span>
+          <span class="card-text"><span class="card-name">教育部臺灣客語辭典</span><span class="card-desc">客語詞彙查詢</span></span>
+        </a>
+        <a class="link-card" href="https://sutian.moe.edu.tw/" target="_blank" rel="noopener">
+          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=sutian.moe.edu.tw&sz=64" alt="" loading="lazy" onerror="this.outerHTML='<span class=fallback></span>'"></span>
+          <span class="card-text"><span class="card-name">教育部臺灣台語常用詞辭典</span><span class="card-desc">台語詞彙查詢</span></span>
+        </a>
+        <a class="link-card" href="https://www.moedict.tw/" target="_blank" rel="noopener">
+          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=moedict.tw&sz=64" alt="" loading="lazy" onerror="this.outerHTML='<span class=fallback></span>'"></span>
+          <span class="card-text"><span class="card-name">萌典</span><span class="card-desc">華、台、客三語整合辭典</span></span>
+        </a>
+        <a class="link-card" href="https://xiaoxue.iis.sinica.edu.tw/ccr/" target="_blank" rel="noopener">
+          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=xiaoxue.iis.sinica.edu.tw&sz=64" alt="" loading="lazy" onerror="this.outerHTML='<span class=fallback></span>'"></span>
+          <span class="card-text"><span class="card-name">中研院漢字古今音資料庫</span><span class="card-desc">歷代字音查詢</span></span>
+        </a>
+        <a class="link-card" href="https://ytenx.org/" target="_blank" rel="noopener">
+          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=ytenx.org&sz=64" alt="" loading="lazy" onerror="this.outerHTML='<span class=fallback></span>'"></span>
+          <span class="card-text"><span class="card-name">韻典網</span><span class="card-desc">韻書電子檢索</span></span>
+        </a>
+        <a class="link-card" href="https://ctext.org/zh" target="_blank" rel="noopener">
+          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=ctext.org&sz=64" alt="" loading="lazy" onerror="this.outerHTML='<span class=fallback></span>'"></span>
+          <span class="card-text"><span class="card-name">中國哲學書電子化計劃</span><span class="card-desc">古籍全文資料庫</span></span>
+        </a>
+        <a class="link-card" href="https://r12a.github.io/pickers/ipa/" target="_blank" rel="noopener">
+          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=r12a.github.io&sz=64" alt="" loading="lazy" onerror="this.outerHTML='<span class=fallback></span>'"></span>
+          <span class="card-text"><span class="card-name">IPA Character Picker</span><span class="card-desc">國際音標輸入工具</span></span>
+        </a>
+        <a class="link-card" href="https://www.seeingspeech.ac.uk/" target="_blank" rel="noopener">
+          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=seeingspeech.ac.uk&sz=64" alt="" loading="lazy" onerror="this.outerHTML='<span class=fallback></span>'"></span>
+          <span class="card-text"><span class="card-name">Seeing Speech</span><span class="card-desc">發音構音影像資料庫</span></span>
+        </a>
+        <a class="link-card" href="https://ckip.iis.sinica.edu.tw/" target="_blank" rel="noopener">
+          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=ckip.iis.sinica.edu.tw&sz=64" alt="" loading="lazy" onerror="this.outerHTML='<span class=fallback></span>'"></span>
+          <span class="card-text"><span class="card-name">中研院 CKIP Lab</span><span class="card-desc">中文語言處理實驗室</span></span>
+        </a>
       </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="frame">
-      <div class="sec-head">
-        <img class="wave-mark" src="image/soundwave-cinnabar.png" alt="" aria-hidden="true">
-        <h2>文學作品</h2>
-        <span class="sec-sub">WRITINGS</span>
-      </div>
-      <div class="lit-grid">
-        <div class="lit-card">
-          <h3>散文</h3>
-          <p>客語散文創作。</p>
-          <a href="writings.html">閱讀篇目 →</a>
-        </div>
-        <div class="lit-card">
-          <h3>報導文學</h3>
-          <p>田野現場的紀實書寫。</p>
-          <a href="writings.html">閱讀篇目 →</a>
-        </div>
-        <div class="lit-card">
-          <h3>客語三行詩</h3>
-          <p>五・七・七，聲調自成韻律。</p>
-          <a href="writings.html">閱讀篇目 →</a>
-        </div>
-      </div>
+      <p style="margin-top:20px;"><a href="links.html" style="color:var(--cinnabar); text-decoration:none; font-size:15.5px; letter-spacing:.1em;">更多資源 →</a></p>
     </div>
   </section>
 </main>
