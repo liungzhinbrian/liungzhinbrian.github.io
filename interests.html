@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>專長與興趣｜曾櫳震 個人網頁</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Charis+SIL:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F2E7;
+    --paper-deep: #EDE7D6;
+    --ink: #211E19;
+    --ink-light: #6E6659;
+    --cinnabar: #A8382A;
+    --rule: #D8D0BC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif TC', 'Songti TC', 'PMingLiU', 'PMingLiU-ExtB', '新細明體-ExtB', serif;
+    line-height: 1.9;
+    font-size: 17px;
+  }
+  .frame { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  header {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .header-inner {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 18px 0 14px; flex-wrap: wrap; gap: 8px 24px;
+  }
+  .site-name { font-size: 21px; font-weight: 900; letter-spacing: .18em; }
+  .site-name a { color: var(--ink); text-decoration: none; }
+  .site-name .seal-dot {
+    display: inline-block; width: 10px; height: 10px;
+    background: var(--cinnabar); margin-left: 10px;
+    transform: translateY(-2px) rotate(45deg);
+  }
+  nav.main-nav ul { display: flex; gap: 26px; list-style: none; flex-wrap: wrap; }
+  nav.main-nav a {
+    color: var(--ink); text-decoration: none;
+    font-size: 15.5px; letter-spacing: .12em;
+    padding-bottom: 3px; border-bottom: 2px solid transparent;
+    transition: border-color .2s;
+  }
+  nav.main-nav a:hover, nav.main-nav a:focus-visible { border-bottom-color: var(--cinnabar); outline: none; }
+  nav.main-nav a.current { border-bottom-color: var(--cinnabar); color: var(--cinnabar); }
+
+  .page-head { padding: 64px 0 40px; border-bottom: 1px solid var(--rule); }
+  .page-head h1 {
+    font-size: clamp(30px, 5vw, 42px);
+    font-weight: 900; letter-spacing: .3em;
+  }
+  .wave-mark {
+    height: 26px; width: auto;
+    margin-right: 16px;
+    vertical-align: -3px;
+  }
+  .page-head .page-sub {
+    color: var(--ink-light); font-size: 14px;
+    letter-spacing: .15em; margin-top: 6px;
+  }
+
+  section { padding: 48px 0 8px; }
+  .sec-head {
+    display: flex; align-items: baseline; gap: 14px;
+    margin-bottom: 22px;
+  }
+  .sec-head h2 { font-size: 22px; font-weight: 600; letter-spacing: .22em; }
+  .sec-head h2::before {
+    content: '';
+    display: inline-block;
+    width: 9px; height: 9px;
+    background: var(--cinnabar);
+    transform: rotate(45deg);
+    margin-right: 12px;
+    vertical-align: 2px;
+  }
+  .sec-head .sec-sub { font-size: 13px; color: var(--ink-light); letter-spacing: .12em; }
+
+  .field-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 12px;
+  }
+  .field-card {
+    padding: 14px 18px;
+    background: #FBF8F0;
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--cinnabar);
+  }
+  .field-card .f-zh { font-size: 17px; font-weight: 600; letter-spacing: .04em; }
+  .field-card .f-en { font-size: 13.5px; color: var(--ink-light); display: block; margin-top: 2px; }
+  .field-card ul {
+    list-style: none;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--rule);
+  }
+  .field-card ul li { font-size: 15px; padding: 2px 0; }
+  .field-card ul li .f-en { display: inline; margin-left: 8px; }
+
+  footer {
+    padding: 44px 0 56px;
+    color: var(--ink-light);
+    font-size: 14px; letter-spacing: .06em;
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+  }
+  footer .wave-foot {
+    height: 22px; width: auto;
+    opacity: .45;
+    display: block;
+    margin-bottom: 14px;
+  }
+  footer a { color: var(--ink-light); }
+
+  @media (max-width: 640px) {
+    nav.main-nav ul { gap: 16px; }
+    .field-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="frame header-inner">
+    <div class="site-name"><a href="index.html">曾櫳震</a><span class="seal-dot" aria-hidden="true"></span></div>
+    <nav class="main-nav" aria-label="主選單">
+      <ul>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">關於我</a></li>
+        <li><a href="experience.html">經歷</a></li>
+        <li><a href="publications.html">著作</a></li>
+        <li><a href="writings.html">文學作品</a></li>
+        <li><a href="interests.html" class="current">專長與興趣</a></li>
+        <li><a href="links.html">推薦網站連結</a></li>
+        <li><a href="contact.html">聯絡資訊</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="frame">
+    <div class="page-head">
+      <h1><img class="wave-mark" src="image/soundwave-cinnabar.png" alt="" aria-hidden="true">專長與興趣</h1>
+      <div class="page-sub">SPECIALIZATION &amp; INTERESTS</div>
+    </div>
+
+    <section>
+      <div class="sec-head"><h2>研究興趣與專長</h2><span class="sec-sub">AREAS OF SPECIALIZATION</span></div>
+      <div class="field-grid">
+        <div class="field-card"><span class="f-zh">語音學</span><span class="f-en">Phonetics</span></div>
+        <div class="field-card"><span class="f-zh">音韻學</span><span class="f-en">Phonology</span></div>
+        <div class="field-card"><span class="f-zh">實驗語音學</span><span class="f-en">Experimental Phonetics</span></div>
+        <div class="field-card"><span class="f-zh">社會語言學／語言與文化</span><span class="f-en">Sociolinguistics / Language and Culture</span></div>
+        <div class="field-card"><span class="f-zh">漢語聲韻學</span><span class="f-en">Chinese Phonology</span></div>
+        <div class="field-card"><span class="f-zh">漢語方言學</span><span class="f-en">Chinese Dialect Studies</span></div>
+        <div class="field-card"><span class="f-zh">漢語語言學</span><span class="f-en">Chinese Linguistics</span></div>
+        <div class="field-card"><span class="f-zh">共時客語</span><span class="f-en">Synchronic Hakka</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>其他專長</h2><span class="sec-sub">OTHER EXPERTISE</span></div>
+      <div class="field-grid">
+        <div class="field-card"><span class="f-zh">客家文學</span><span class="f-en">Hakka Literature</span></div>
+        <div class="field-card"><span class="f-zh">客家研究</span><span class="f-en">Hakka Studies</span></div>
+        <div class="field-card"><span class="f-zh">客語教學及其研究</span><span class="f-en">Hakka Language Teaching and Studies</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>其他興趣</h2><span class="sec-sub">OTHER INTERESTS</span></div>
+      <div class="field-grid">
+        <div class="field-card"><span class="f-zh">臺灣語言教育</span><span class="f-en">Taiwan Languages Teaching</span></div>
+        <div class="field-card"><span class="f-zh">臺灣台語</span><span class="f-en">Taiwanese Southern Min（Taiwanese Taigi）</span></div>
+        <div class="field-card"><span class="f-zh">民間戲曲</span><span class="f-en">Folk Opera</span></div>
+        <div class="field-card"><span class="f-zh">客家戲曲</span><span class="f-en">Hakka Opera</span></div>
+        <div class="field-card">
+          <span class="f-zh">先秦道家思想</span><span class="f-en">Taoism</span>
+          <ul>
+            <li>老子<span class="f-en">Laozi</span></li>
+            <li>莊子<span class="f-en">Zhuangzi</span></li>
+          </ul>
+        </div>
+        <div class="field-card">
+          <span class="f-zh">漢傳佛教</span><span class="f-en">Buddhism</span>
+          <ul>
+            <li>漢梵對譯<span class="f-en">Sanskrit to Chinese Translation Study</span></li>
+          </ul>
+        </div>
+        <div class="field-card"><span class="f-zh">中醫思想</span><span class="f-en">Traditional Chinese Medicine</span></div>
+        <div class="field-card"><span class="f-zh">中國古典文學</span><span class="f-en">Chinese Classic Literature</span></div>
+        <div class="field-card"><span class="f-zh">客家音樂</span><span class="f-en">Hakka Music</span></div>
+        <div class="field-card"><span class="f-zh">臺灣民間信仰</span><span class="f-en">Folk Beliefs in Taiwan</span></div>
+        <div class="field-card"><span class="f-zh">香港粵語</span><span class="f-en">Hong Kong Cantonese</span></div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="frame">
+    <img class="wave-foot" src="image/soundwave-ink.png" alt="" aria-hidden="true">
+    © 2026 曾櫳震（Tseng Brian Liungzhin）｜<a href="sitemap.html">網站地圖</a>
+  </div>
+</footer>
+
+</body>
+</html>
