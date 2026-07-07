@@ -116,17 +116,26 @@
   .card-logo {
     width: 40px; height: 40px;
     flex-shrink: 0;
+    position: relative;
     display: flex; align-items: center; justify-content: center;
     background: #fff;
     border: 1px solid var(--rule);
     border-radius: 4px;
     overflow: hidden;
   }
-  .card-logo img { width: 30px; height: 30px; object-fit: contain; }
+  .card-logo img {
+    width: 30px; height: 30px;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+  }
   .card-logo .fallback {
+    position: absolute;
+    left: 50%; top: 50%;
     width: 11px; height: 11px;
     background: var(--cinnabar);
-    transform: rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
   }
   .card-text { min-width: 0; }
   .card-name {
@@ -191,19 +200,19 @@
       <h2>學術機構</h2>
       <div class="link-grid">
         <a class="link-card" href="https://www.nthu.edu.tw/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=nthu.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/nthu.edu.tw.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=www.nthu.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/www.nthu.edu.tw.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">國立清華大學</span><span class="card-desc">National Tsing Hua University</span></span>
         </a>
         <a class="link-card" href="https://gitll.site.nthu.edu.tw/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=gitll.site.nthu.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/gitll.site.nthu.edu.tw.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=gitll.site.nthu.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/gitll.site.nthu.edu.tw.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">國立清華大學臺灣語言研究與教學研究所</span><span class="card-desc">Taiwan Languages &amp; Language Teaching</span></span>
         </a>
         <a class="link-card" href="https://www.ndhu.edu.tw/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=ndhu.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/ndhu.edu.tw.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=www.ndhu.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/www.ndhu.edu.tw.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">國立東華大學</span><span class="card-desc">National Dong Hwa University</span></span>
         </a>
         <a class="link-card" href="https://chinese.ndhu.edu.tw/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=chinese.ndhu.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/chinese.ndhu.edu.tw.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=chinese.ndhu.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/chinese.ndhu.edu.tw.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">國立東華大學中國語文學系</span><span class="card-desc">Dept. of Sinophone Literatures</span></span>
         </a>
       </div>
@@ -213,27 +222,27 @@
       <h2>辭書與文獻資料庫</h2>
       <div class="link-grid">
         <a class="link-card" href="https://hakkadict.moe.edu.tw/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="image/logo-hakkadict.png" alt="" loading="lazy" onerror="this.outerHTML='<span class=fallback></span>'"></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="image/logo-hakkadict.png" alt="" loading="lazy" onerror="this.style.display='none'"></span>
           <span class="card-text"><span class="card-name">教育部臺灣客語辭典</span><span class="card-desc">客語詞彙查詢</span></span>
         </a>
         <a class="link-card" href="https://sutian.moe.edu.tw/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=sutian.moe.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/sutian.moe.edu.tw.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=sutian.moe.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/sutian.moe.edu.tw.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">教育部臺灣台語常用詞辭典</span><span class="card-desc">台語詞彙查詢</span></span>
         </a>
         <a class="link-card" href="https://www.moedict.tw/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=moedict.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/moedict.tw.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=www.moedict.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/www.moedict.tw.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">萌典</span><span class="card-desc">華、台、客三語整合辭典</span></span>
         </a>
         <a class="link-card" href="https://xiaoxue.iis.sinica.edu.tw/ccr/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=xiaoxue.iis.sinica.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/xiaoxue.iis.sinica.edu.tw.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=xiaoxue.iis.sinica.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/xiaoxue.iis.sinica.edu.tw.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">中研院漢字古今音資料庫</span><span class="card-desc">歷代字音查詢</span></span>
         </a>
         <a class="link-card" href="https://ytenx.org/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=ytenx.org&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/ytenx.org.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=ytenx.org&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/ytenx.org.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">韻典網</span><span class="card-desc">韻書電子檢索</span></span>
         </a>
         <a class="link-card" href="https://ctext.org/zh" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=ctext.org&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/ctext.org.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=ctext.org&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/ctext.org.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">中國哲學書電子化計劃</span><span class="card-desc">古籍全文資料庫</span></span>
         </a>
       </div>
@@ -243,15 +252,15 @@
       <h2>語音學與語料工具</h2>
       <div class="link-grid">
         <a class="link-card" href="https://r12a.github.io/pickers/ipa/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="image/logo-ipa-picker.png" alt="" loading="lazy" onerror="this.outerHTML='<span class=fallback></span>'"></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="image/logo-ipa-picker.png" alt="" loading="lazy" onerror="this.style.display='none'"></span>
           <span class="card-text"><span class="card-name">IPA Character Picker</span><span class="card-desc">國際音標輸入工具</span></span>
         </a>
         <a class="link-card" href="https://www.seeingspeech.ac.uk/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=seeingspeech.ac.uk&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/seeingspeech.ac.uk.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=www.seeingspeech.ac.uk&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/www.seeingspeech.ac.uk.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">Seeing Speech</span><span class="card-desc">發音構音影像資料庫</span></span>
         </a>
         <a class="link-card" href="https://ckip.iis.sinica.edu.tw/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=ckip.iis.sinica.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/ckip.iis.sinica.edu.tw.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=ckip.iis.sinica.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/ckip.iis.sinica.edu.tw.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">中研院 CKIP Lab</span><span class="card-desc">中文語言處理實驗室</span></span>
         </a>
       </div>
@@ -261,15 +270,15 @@
       <h2>機構與學會</h2>
       <div class="link-grid">
         <a class="link-card" href="https://www.hakka.gov.tw/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=hakka.gov.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/hakka.gov.tw.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=www.hakka.gov.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/www.hakka.gov.tw.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">客家委員會</span><span class="card-desc">Hakka Affairs Council</span></span>
         </a>
         <a class="link-card" href="http://www.twlls.org.tw/index.php" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=twlls.org.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/twlls.org.tw.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=www.twlls.org.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/www.twlls.org.tw.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">台灣語文學會</span><span class="card-desc">Taiwan Languages &amp; Literature Society</span></span>
         </a>
         <a class="link-card" href="https://www.scp.org.tw/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=scp.org.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/scp.org.tw.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=www.scp.org.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/www.scp.org.tw.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">中華民國聲韻學學會</span><span class="card-desc">Society of Chinese Phonology</span></span>
         </a>
       </div>
@@ -279,11 +288,11 @@
       <h2>宗教與刊物</h2>
       <div class="link-grid">
         <a class="link-card" href="https://www.hongshi.org.tw/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=hongshi.org.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/hongshi.org.tw.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=www.hongshi.org.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/www.hongshi.org.tw.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">佛教弘誓學院</span><span class="card-desc">Buddhist Hongshi College</span></span>
         </a>
         <a class="link-card" href="http://nonchurch2025.byethost10.com/?i=1" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=nonchurch2025.byethost10.com&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/nonchurch2025.byethost10.com.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=nonchurch2025.byethost10.com&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/nonchurch2025.byethost10.com.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">無境界者 線上雜誌</span><span class="card-desc">線上刊物</span></span>
         </a>
       </div>

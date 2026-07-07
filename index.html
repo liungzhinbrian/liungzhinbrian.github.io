@@ -281,17 +281,26 @@
   .card-logo {
     width: 40px; height: 40px;
     flex-shrink: 0;
+    position: relative;
     display: flex; align-items: center; justify-content: center;
     background: #fff;
     border: 1px solid var(--rule);
     border-radius: 4px;
     overflow: hidden;
   }
-  .card-logo img { width: 30px; height: 30px; object-fit: contain; }
+  .card-logo img {
+    width: 30px; height: 30px;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+  }
   .card-logo .fallback {
+    position: absolute;
+    left: 50%; top: 50%;
     width: 11px; height: 11px;
     background: var(--cinnabar);
-    transform: rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
   }
   .card-text { min-width: 0; }
   .card-name {
@@ -425,39 +434,39 @@
       </div>
       <div class="link-grid">
         <a class="link-card" href="https://hakkadict.moe.edu.tw/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="image/logo-hakkadict.png" alt="" loading="lazy" onerror="this.outerHTML='<span class=fallback></span>'"></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="image/logo-hakkadict.png" alt="" loading="lazy" onerror="this.style.display='none'"></span>
           <span class="card-text"><span class="card-name">教育部臺灣客語辭典</span><span class="card-desc">客語詞彙查詢</span></span>
         </a>
         <a class="link-card" href="https://sutian.moe.edu.tw/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=sutian.moe.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/sutian.moe.edu.tw.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=sutian.moe.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/sutian.moe.edu.tw.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">教育部臺灣台語常用詞辭典</span><span class="card-desc">台語詞彙查詢</span></span>
         </a>
         <a class="link-card" href="https://www.moedict.tw/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=moedict.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/moedict.tw.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=www.moedict.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/www.moedict.tw.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">萌典</span><span class="card-desc">華、台、客三語整合辭典</span></span>
         </a>
         <a class="link-card" href="https://xiaoxue.iis.sinica.edu.tw/ccr/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=xiaoxue.iis.sinica.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/xiaoxue.iis.sinica.edu.tw.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=xiaoxue.iis.sinica.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/xiaoxue.iis.sinica.edu.tw.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">中研院漢字古今音資料庫</span><span class="card-desc">歷代字音查詢</span></span>
         </a>
         <a class="link-card" href="https://ytenx.org/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=ytenx.org&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/ytenx.org.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=ytenx.org&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/ytenx.org.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">韻典網</span><span class="card-desc">韻書電子檢索</span></span>
         </a>
         <a class="link-card" href="https://ctext.org/zh" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=ctext.org&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/ctext.org.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=ctext.org&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/ctext.org.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">中國哲學書電子化計劃</span><span class="card-desc">古籍全文資料庫</span></span>
         </a>
         <a class="link-card" href="https://r12a.github.io/pickers/ipa/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="image/logo-ipa-picker.png" alt="" loading="lazy" onerror="this.outerHTML='<span class=fallback></span>'"></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="image/logo-ipa-picker.png" alt="" loading="lazy" onerror="this.style.display='none'"></span>
           <span class="card-text"><span class="card-name">IPA Character Picker</span><span class="card-desc">國際音標輸入工具</span></span>
         </a>
         <a class="link-card" href="https://www.seeingspeech.ac.uk/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=seeingspeech.ac.uk&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/seeingspeech.ac.uk.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=www.seeingspeech.ac.uk&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/www.seeingspeech.ac.uk.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">Seeing Speech</span><span class="card-desc">發音構音影像資料庫</span></span>
         </a>
         <a class="link-card" href="https://ckip.iis.sinica.edu.tw/" target="_blank" rel="noopener">
-          <span class="card-logo"><img src="https://www.google.com/s2/favicons?domain=ckip.iis.sinica.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='https://icons.duckduckgo.com/ip3/ckip.iis.sinica.edu.tw.ico';}else{this.outerHTML='<span class=fallback></span>';}"></span>
+          <span class="card-logo"><span class="fallback" aria-hidden="true"></span><img src="https://www.google.com/s2/favicons?domain=ckip.iis.sinica.edu.tw&sz=64" alt="" loading="lazy" onerror="if(!this.dataset.a){this.dataset.a=1;this.src='https://icons.duckduckgo.com/ip3/ckip.iis.sinica.edu.tw.ico'}else{this.style.display='none'}"></span>
           <span class="card-text"><span class="card-name">中研院 CKIP Lab</span><span class="card-desc">中文語言處理實驗室</span></span>
         </a>
       </div>
