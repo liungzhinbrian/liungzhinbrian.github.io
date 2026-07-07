@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文學作品｜曾櫳震 個人網頁</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Charis+SIL:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F2E7;
+    --paper-deep: #EDE7D6;
+    --ink: #211E19;
+    --ink-light: #6E6659;
+    --cinnabar: #A8382A;
+    --rule: #D8D0BC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif TC', 'Songti TC', 'PMingLiU', 'PMingLiU-ExtB', '新細明體-ExtB', serif;
+    line-height: 1.9;
+    font-size: 17px;
+  }
+  .frame { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  header {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .header-inner {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 18px 0 14px; flex-wrap: wrap; gap: 8px 24px;
+  }
+  .site-name { font-size: 21px; font-weight: 900; letter-spacing: .18em; }
+  .site-name a { color: var(--ink); text-decoration: none; }
+  .site-name .seal-dot {
+    display: inline-block; width: 10px; height: 10px;
+    background: var(--cinnabar); margin-left: 10px;
+    transform: translateY(-2px) rotate(45deg);
+  }
+  nav.main-nav ul { display: flex; gap: 26px; list-style: none; flex-wrap: wrap; }
+  nav.main-nav a {
+    color: var(--ink); text-decoration: none;
+    font-size: 15.5px; letter-spacing: .12em;
+    padding-bottom: 3px; border-bottom: 2px solid transparent;
+    transition: border-color .2s;
+  }
+  nav.main-nav a:hover, nav.main-nav a:focus-visible { border-bottom-color: var(--cinnabar); outline: none; }
+  nav.main-nav a.current { border-bottom-color: var(--cinnabar); color: var(--cinnabar); }
+
+  .page-head { padding: 64px 0 40px; border-bottom: 1px solid var(--rule); }
+  .page-head h1 {
+    font-size: clamp(30px, 5vw, 42px);
+    font-weight: 900; letter-spacing: .3em;
+  }
+  .wave-mark {
+    height: 26px; width: auto;
+    margin-right: 16px;
+    vertical-align: -3px;
+  }
+  .page-head .page-sub {
+    color: var(--ink-light); font-size: 14px;
+    letter-spacing: .15em; margin-top: 6px;
+  }
+
+  section { padding: 48px 0 8px; }
+  .sec-head {
+    display: flex; align-items: baseline; gap: 14px;
+    margin-bottom: 20px;
+  }
+  .sec-head h2 { font-size: 22px; font-weight: 600; letter-spacing: .22em; }
+  .sec-head h2::before {
+    content: '';
+    display: inline-block;
+    width: 9px; height: 9px;
+    background: var(--cinnabar);
+    transform: rotate(45deg);
+    margin-right: 12px;
+    vertical-align: 2px;
+  }
+  .sec-head .sec-sub { font-size: 13px; color: var(--ink-light); letter-spacing: .12em; }
+
+  .work-list { list-style: none; border-top: 1px dashed var(--rule); }
+  .work-list li { border-bottom: 1px dashed var(--rule); }
+  .work-list a, .work-list .locked {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 14px 8px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .work-list a { transition: background .15s; }
+  .work-list a:hover, .work-list a:focus-visible { background: var(--paper-deep); outline: none; }
+  .work-list a:hover .w-title { color: var(--cinnabar); }
+  .w-title { font-size: 17.5px; font-weight: 600; letter-spacing: .04em; }
+  .w-meta { font-size: 13.5px; color: var(--ink-light); white-space: nowrap; }
+  .locked .w-title { color: var(--ink-light); font-weight: 400; }
+  .badge {
+    display: inline-block;
+    font-size: 12.5px;
+    color: var(--cinnabar);
+    border: 1px solid var(--cinnabar);
+    padding: 1px 10px;
+    letter-spacing: .1em;
+    white-space: nowrap;
+  }
+
+  footer {
+    padding: 44px 0 56px;
+    color: var(--ink-light);
+    font-size: 14px; letter-spacing: .06em;
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+  }
+  footer .wave-foot {
+    height: 22px; width: auto;
+    opacity: .45;
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  @media (max-width: 640px) {
+    nav.main-nav ul { gap: 16px; }
+    .work-list a, .work-list .locked { flex-direction: column; gap: 4px; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="frame header-inner">
+    <div class="site-name"><a href="index.html">曾櫳震</a><span class="seal-dot" aria-hidden="true"></span></div>
+    <nav class="main-nav" aria-label="主選單">
+      <ul>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">關於我</a></li>
+        <li><a href="experience.html">經歷</a></li>
+        <li><a href="publications.html">著作</a></li>
+        <li><a href="writings.html" class="current">文學作品</a></li>
+        <li><a href="interests.html">專長與興趣</a></li>
+        <li><a href="links.html">推薦網站連結</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="frame">
+    <div class="page-head">
+      <h1><img class="wave-mark" src="image/soundwave-cinnabar.png" alt="" aria-hidden="true">文學作品</h1>
+      <div class="page-sub">WRITINGS — 客語散文・報導文學・社論・客家三行詩</div>
+    </div>
+
+    <section>
+      <div class="sec-head"><h2>客語散文</h2><span class="sec-sub">ESSAYS</span></div>
+      <ul class="work-list">
+        <li><a href="writing-tea.html">
+          <span class="w-title">食一杯人情味个茶</span>
+          <span class="w-meta">2023.05｜刊於【客新聞】</span></a></li>
+        <li><div class="locked">
+          <span class="w-title">苦楝</span>
+          <span class="badge">出版中暫不公開</span></div></li>
+        <li><div class="locked">
+          <span class="w-title">客家文化主題──義民爺爺</span>
+          <span class="badge">出版中暫不公開</span></div></li>
+        <li><div class="locked">
+          <span class="w-title">客家文化主題──還老愿</span>
+          <span class="badge">出版中暫不公開</span></div></li>
+        <li><div class="locked">
+          <span class="w-title">客家文化主題──臺灣个四海客話</span>
+          <span class="badge">出版中暫不公開</span></div></li>
+        <li><div class="locked">
+          <span class="w-title">客家文化主題──生活中的禁忌</span>
+          <span class="badge">出版中暫不公開</span></div></li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>客語報導文學</h2><span class="sec-sub">REPORTAGE</span></div>
+      <ul class="work-list">
+        <li><a href="writing-zhangyuchan.html">
+          <span class="w-title">堅強勇敢个女性，專訪二二八鳳林事件遺族張玉蟬</span>
+          <span class="w-meta">2022.04｜刊於【客新聞】</span></a></li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>客語社論</h2><span class="sec-sub">EDITORIALS</span></div>
+      <ul class="work-list">
+        <li><a href="writing-name.html">
+          <span class="w-title">用𠊎个語言　喊𠊎个名</span>
+          <span class="w-meta">2023.12｜刊於【客新聞】</span></a></li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>客家三行詩</h2><span class="sec-sub">HAKKA TERCETS</span></div>
+      <ul class="work-list">
+        <li><div class="locked">
+          <span class="w-title">花毯</span>
+          <span class="badge">投稿中暫不公開</span></div></li>
+        <li><div class="locked">
+          <span class="w-title">盼望</span>
+          <span class="badge">投稿中暫不公開</span></div></li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="frame">
+    <img class="wave-foot" src="image/soundwave-ink.png" alt="" aria-hidden="true">
+    © 2026 曾櫳震（Tseng Brian Liungzhin）
+  </div>
+</footer>
+
+</body>
+</html>

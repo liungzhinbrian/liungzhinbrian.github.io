@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用𠊎个語言　喊𠊎个名｜曾櫳震 個人網頁</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Charis+SIL:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F2E7;
+    --paper-deep: #EDE7D6;
+    --ink: #211E19;
+    --ink-light: #6E6659;
+    --cinnabar: #A8382A;
+    --rule: #D8D0BC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif TC', 'Songti TC', 'PMingLiU', 'PMingLiU-ExtB', '新細明體-ExtB', serif;
+    line-height: 2.05;
+    font-size: 17.5px;
+  }
+  .frame { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .reading { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  header {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .header-inner {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 18px 0 14px; flex-wrap: wrap; gap: 8px 24px;
+  }
+  .site-name { font-size: 21px; font-weight: 900; letter-spacing: .18em; }
+  .site-name a { color: var(--ink); text-decoration: none; }
+  .site-name .seal-dot {
+    display: inline-block; width: 10px; height: 10px;
+    background: var(--cinnabar); margin-left: 10px;
+    transform: translateY(-2px) rotate(45deg);
+  }
+  nav.main-nav ul { display: flex; gap: 26px; list-style: none; flex-wrap: wrap; }
+  nav.main-nav a {
+    color: var(--ink); text-decoration: none;
+    font-size: 15.5px; letter-spacing: .12em;
+    padding-bottom: 3px; border-bottom: 2px solid transparent;
+    transition: border-color .2s;
+  }
+  nav.main-nav a:hover, nav.main-nav a:focus-visible { border-bottom-color: var(--cinnabar); outline: none; }
+  nav.main-nav a.current { border-bottom-color: var(--cinnabar); color: var(--cinnabar); }
+
+  .art-head { padding: 64px 0 36px; border-bottom: 1px solid var(--rule); text-align: center; }
+  .art-head .genre {
+    display: inline-block;
+    font-size: 13.5px; letter-spacing: .3em;
+    color: var(--cinnabar);
+    border: 1px solid var(--cinnabar);
+    padding: 2px 14px 2px 17px;
+    margin-bottom: 18px;
+  }
+  .art-head h1 {
+    font-size: clamp(26px, 5vw, 38px);
+    font-weight: 900; letter-spacing: .14em;
+    line-height: 1.6;
+  }
+  .art-head .meta {
+    margin-top: 14px;
+    font-size: 14.5px; color: var(--ink-light);
+    letter-spacing: .06em;
+  }
+  .art-head .meta a { color: var(--cinnabar); text-decoration: none; }
+  .art-head .meta a:hover { text-decoration: underline; }
+
+  .lang-head {
+    display: flex; align-items: center; gap: 14px;
+    margin: 52px 0 26px;
+  }
+  .lang-head img { height: 22px; width: auto; }
+  .lang-head h2 { font-size: 21px; font-weight: 600; letter-spacing: .3em; }
+
+  article h3 {
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    margin: 34px 0 14px;
+    padding-left: 14px;
+    border-left: 3px solid var(--cinnabar);
+    line-height: 1.7;
+  }
+  article p {
+    text-indent: 2em;
+    margin-bottom: 8px;
+  }
+  .notes {
+    margin-top: 30px;
+    padding: 18px 24px;
+    background: #FBF8F0;
+    border: 1px solid var(--rule);
+    font-size: 15px;
+    color: var(--ink-light);
+    line-height: 1.9;
+  }
+  .notes .n-title { letter-spacing: .2em; color: var(--ink); margin-bottom: 6px; font-size: 14px; }
+
+  .back-link {
+    display: inline-block;
+    margin-top: 44px;
+    color: var(--cinnabar);
+    text-decoration: none;
+    font-size: 15.5px;
+    letter-spacing: .1em;
+  }
+  .back-link:hover { text-decoration: underline; }
+
+  footer {
+    padding: 44px 0 56px;
+    color: var(--ink-light);
+    font-size: 14px; letter-spacing: .06em;
+    border-top: 1px solid var(--rule);
+    margin-top: 56px;
+  }
+  footer .wave-foot {
+    height: 22px; width: auto;
+    opacity: .45;
+    display: block;
+    margin-bottom: 14px;
+  }
+  @media (max-width: 640px) { nav.main-nav ul { gap: 16px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="frame header-inner">
+    <div class="site-name"><a href="index.html">曾櫳震</a><span class="seal-dot" aria-hidden="true"></span></div>
+    <nav class="main-nav" aria-label="主選單">
+      <ul>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">關於我</a></li>
+        <li><a href="experience.html">經歷</a></li>
+        <li><a href="publications.html">著作</a></li>
+        <li><a href="writings.html" class="current">文學作品</a></li>
+        <li><a href="interests.html">專長與興趣</a></li>
+        <li><a href="links.html">推薦網站連結</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="reading">
+    <div class="art-head">
+      <span class="genre">客語社論</span>
+      <h1>用𠊎个語言　喊𠊎个名</h1>
+      <div class="meta">2023年12月02日　文／曾櫳震<br>同步刊於 <a href="https://hakkanews.tw/2023/12/02/95123/" target="_blank" rel="noopener">【客新聞】</a></div>
+    </div>
+
+    <article>
+      <div class="lang-head"><img src="image/soundwave-cinnabar.png" alt="" aria-hidden="true"><h2>客語原文</h2></div>
+      <p>泰雅族人Bawtu Payen（寶杜巴燕）希望在身分證頂背淨列出佢个族語名仔，所以興訟打官司，包尾2023年11月9號，台北高等行政法院宣判Bawtu Payen打贏官司，戶政事務所應當愛接受Bawtu Payen在身分證頂背單淨列出佢个族語名，毋使加入漢字，係全台第一隻例仔。𠊎認為原住民族人个姓名權早斯應當分法律保障，這係原住民族朋友个權利，頭過个政府，愛在身分證頂背寫族名，斯一定愛加漢字，𠊎試著這係盡毋公平个事情。</p>
+      <p>就像2019年个時節，𫣆俚國家通過《國家語言發展法》，保障各種台灣个本土語言做國家語言；另外也有《客家基本法》，保障𫣆俚客語在法律个地位。《護照條例》同施行細則修正了後，大自家都做得用自己个母語來翻譯做外文名。像𠊎俚客家人做得用客語拼音來做自己个名，該央時，客家委員會主委楊長鎮斯摎自己个護照外文名換忒，本來係「Yang, Chang-Cheng」改寫做「Yiong, Con-Ziin」[1]。我自家个護照外文名也換寫海陸客語，目前係「Tseng, Brian Liung-Zhin」[2]，原旦用个華語翻譯「Tseng, Long-Zhen」，這下列做別名續等用。</p>
+      <p>所以𠊎試著名仔應該跈主人个想法，尊重名仔主人个想法正係最重要个。無必要為著行政機關个方便，來犧牲原住民族人个姓名權。</p>
+      <p>原住民族群平常時用原住民各族个族語，該在語言學當中个分類係南島語系。中央研究院院士李壬癸同學界主流大體認為南島語个發源地盡有可能係臺灣，毋過𠊎俚个政府長年以來嗄無看著尊重原住民族人在法律頂背个姓名權，這確實有改進个空間。</p>
+      <p>當然有人會說，安一隻漢名係為了方便大家平常時來使用，毋過𠊎個人無認同這隻觀點，甚至𠊎認為這根本係無合理个講法。𠊎个理由有幾點：</p>
+
+      <h3>第一：對基本人權來看</h3>
+      <p>安一隻漢名無一定係原住民朋友甘願个，當多時節係因為配合漢人較多个台灣社會，還係為著將華語當成主要工作語言个公家機關，正分人安一隻漢名。既然佢本人希望用自家个話語講自家个名，做麼个毋成全別人呢？</p>
+
+      <h3>第二：對多元文化來看</h3>
+      <p>為著分別人方便喊、寫佢个名，該係漢人沙文主義，臺灣毋單淨有漢人，漢人較多無毋著，毋過仰做得因為𫣆俚漢人較多，斯犧牲其他族群个利益？一溜里來，𫣆俚都因為臺灣係多元文化个寶島試著驕傲，嗄無法度忍耐原住民用佢兜个族語名仔？係講恁樣，敢毋會當奇怪？在這條件之下，係講有原住民族人願意續等用漢語、漢字名仔，𫣆俚愛尊重佢，還過愛知該係佢个良善，肯分所有人方便，毋過這毋是佢兜个義務。</p>
+
+      <h3>第三：羅馬拼音大自家看無？</h3>
+      <p>寫到這，做得想著定著會有人講：𠊎看毋識羅馬拼音。毋過𠊎認為，𫣆俚應該愛知講，各原住民族語言雖然本旦無文字，毋過佢兜做得用羅馬拼音來寫佢兜个語言。看毋識羅馬拼音應該愛自家去學，就像𫣆俚客語拼音也係另外來學習个，借用拼音來紀錄𫣆俚个母語。毋係因為自家看毋識，斯喊人毋好用，若係恁樣，華語注音乜係一種拼音方式，有人學毋起來，係毋係大家都放棄，莫去學佢？</p>
+      <p>係講毋知仰般唸，𫣆俚應當愛有一隻謙卑、學習个心去摎人請教，𠊎相信無人毋肯同你分享應該仰般使用羅馬拼音。各語言用个拼音系統可能略略仔有爭差，比論講𫣆俚客語用教育部客語拼音方案，河洛話有「台羅拼音（TL）」摎「教會白話字（POJ）」，各原住民族个族語拼音也無全部共樣。毋過就算無辦法知講該語言歸隻羅馬拼音系統个唸法，最少乜做得知對方个名姓愛仰般讀。</p>
+      <p>知得別人名姓个讀音過後，自家愛用注音還係任何自家中意个方式來注，提醒自家盡量毋好唸毋著，這就係自家愛去解決个事情，尊重別人个名姓係基本个道理。</p>
+      <p>係講毋曉讀个字仰結煞？𫣆俚做得看日本人仰般處理。日本話當中借用當多个漢字，目前日本人个名仔時常用漢字來寫，毋過日本話个漢字當中有分做「吳音」、「漢音」摎「唐音」，就算共隻字，放个位所無共樣，乜有無共樣个音。該佢兜仰般處理呢？當然斯係開嘴問，問對方名仔應當仰般讀，正係基本个禮貌。</p>
+      <p>另外台灣个漢人用漢字來安名，敢講就全看得識、當好唸？敗勢，無恁該，名仔裡肚个難字、日常生活中罕得用个字拗蠻多，像𠊎自家个「櫳」字，斯毋係當輒看著个字，該恁樣形仰結煞？當然係查字典，無斯愛去請教名仔个主人。</p>
+      <p>總講，毋會唸名仔係懶尸學習个理由定定。係講麼儕提出這種講法，其實斯係摎大自家講：𠊎懶尸學。</p>
+      <p>所以𫣆俚做毋得盎零，愛知好變，應當尊重多元个文化，還愛為著這沙鼻，尊重逐儕人用自家个語言大聲來講自己个名仔！</p>
+
+      <div class="notes">
+        <div class="n-title">註釋</div>
+        [1] 楊長鎮主委使用四縣客語，故護照翻譯為「Yiong, Con-Ziin」。援引來源：很潮！客委會副主委楊長鎮秀出「客語拼音」護照。新頭殼Newtalk新聞。<br>
+        [2] 為方便外國人士辨別，或方便國外機票、旅宿、餐廳等登記、購買等，本人護照外文姓名除改做客語拼音外，另加以中間名Brian。
+      </div>
+
+      <div class="lang-head"><img src="image/soundwave-cinnabar.png" alt="" aria-hidden="true"><h2>華語語譯</h2></div>
+      <p>泰雅族人Bawtu Payen（寶杜巴燕）希望身分證上單列族名，因此興訟，2023年11月9日台北高等行政法院判決Bawtu Payen勝訴，戶政事務所應允許Bawtu Payen在身分證上單列族語拼音，不必並列漢字，成為全台首例。原住民族人的姓名權早就應該受到保障，這是原住民族朋友的權利，先前的政府，要列族名就必須列漢語姓名，這是相當不公平的事。</p>
+      <p>就像2019年，我國通過《國家語言發展法》保障各種台灣的本土語言為國家語言；另外也有《客家基本法》，保障我們客語的法律地位。《護照條例》及其施行細則修正後，大家都可以用自己的母語來翻譯姓名，例如我們客家人可以用客語拼音來翻譯自己的姓名，客家委員會主委楊長鎮當時就將自己的護照外文姓名從本來的「Yang, Chang-Cheng」正名為「Yiong, Con-Ziin」。而我自己的護照外文姓名也正名為海陸客語，目前是「Tseng, Brian Liung-Zhin」，原先使用的華語翻譯「Tseng, Long-Zhen」則列為別名持續使用。</p>
+      <p>所以名應從主人，尊重當事人的意願才是最重要的。沒有必要為了行政機關的方便，而犧牲原民族人的姓名權。原住民族群使用原住民各族族語，那在語言學的分類中屬於南島語系，中研院院士李壬癸與學界主流都認為南島語的發源地極可能是臺灣，而我們的政府卻一直沒有尊重原住民族人在法律上的姓名權，這確實有改進的空間。</p>
+      <p>當然有人會說，取漢名是為了方便大家辨識與使用，但是我不認同這個觀點，甚至我認為這個說法不合邏輯。我的理由有幾點：</p>
+
+      <h3>第一：從基本人權看起</h3>
+      <p>漢語姓名不見得是自願的，很多時候是為了符合漢人為多的台灣社會或者配合以華語為主要工作語言的公家機關，才取一個漢語姓名。既然本人希望用族語姓名，為什麼不有成人之美呢？</p>
+
+      <h3>第二：從多元文化看起</h3>
+      <p>為了方便他人辨識與呼叫，而一定要加上漢語姓名，那是漢人沙文主義，臺灣不只有漢民族，漢民族是多數固然沒錯，但我們怎麼可以因此犧牲其他族群的利益？一直以來，我們以臺灣為多元文化的寶島自居，不能容納原住民族人用族語姓名？如果如此，便是鄉愿。在此前提下，如果有原住民族人願意繼續使用漢名，我們尊重，並且要知道那是他的善良，讓所有人很方便，但不是他的義務。</p>
+
+      <h3>第三：羅馬拼音大家看不懂？</h3>
+      <p>可以預見當然會有人會說：我看不懂羅馬字。但我們應該要知道，各原住民族語固然沒有文字，但是他們可以用羅馬字寫下他們的語言。看不懂羅馬拼音應該要自己去學，就像我們客語拼音也是另外學習，借用拼音來紀錄我們的母語。而不是叫人不要用，這是本末倒置的，若是這樣，華語注音符號也是一種拼音方式，是不是也不要去學？</p>
+      <p>如果不懂，其實應該懷抱一顆謙卑、學習的心去請教，相信沒有人不樂於與你分享應該怎麼使用羅馬拼音，即便各語言用的拼音系統可能不太一樣，例如我們客語用教育部客語拼音，台灣閩南語有台羅拼音（TL）以及教會白話字（POJ），各原住民族的族語拼音也不太一樣。但即便沒辦法知道該語言整套羅馬拼音系統的運作，最起碼也可以知道對方的名字怎麼唸。這時得知讀音後，自己要用注音或任何你喜歡的方式備註，讓自己不要唸錯，這就是自己的事，而尊重別人的名字是基本的。</p>
+      <p>如果不會唸的字怎麼辦？以日本人為例，日本語大量借用漢字，目前日本人的名字更常以漢字表記，但是日語漢字有吳音、漢音、唐音，就算是相同漢字，位置不同時，也可能有不同的讀音。那他們怎麼處理呢？當然就是開口問，問對方姓名應該如何讀，才是基本的禮貌。另外台灣的漢人用漢字取名，難道就都很好辨識、很好唸？很抱歉，沒那麼簡單，名字中的生難字、冷僻字多得是，像我自己的「櫳」字就不是個高詞頻的漢字，那這樣怎麼辦？當然是查字典，不然就是要去請教名字的主人。</p>
+      <p>綜合而論，不會唸名字是赤裸裸懶得學習的藉口而已。若有誰提出這種論述，無非就是告訴世人：我懶得學習。</p>
+      <p>所以我們不應固執不知變通，而應當尊重多元文化，並且為此感到驕傲，尊重每一個人用自己的語言大聲說出自己的名字！</p>
+    </article>
+
+    <a class="back-link" href="writings.html">← 返回文學作品目錄</a>
+  </div>
+</main>
+
+<footer>
+  <div class="frame">
+    <img class="wave-foot" src="image/soundwave-ink.png" alt="" aria-hidden="true">
+    © 2026 曾櫳震（Tseng Brian Liungzhin）
+  </div>
+</footer>
+
+</body>
+</html>

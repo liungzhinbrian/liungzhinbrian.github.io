@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>食一杯人情味个茶｜曾櫳震 個人網頁</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Charis+SIL:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F2E7;
+    --paper-deep: #EDE7D6;
+    --ink: #211E19;
+    --ink-light: #6E6659;
+    --cinnabar: #A8382A;
+    --rule: #D8D0BC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif TC', 'Songti TC', 'PMingLiU', 'PMingLiU-ExtB', '新細明體-ExtB', serif;
+    line-height: 2.05;
+    font-size: 17.5px;
+  }
+  .frame { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .reading { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  header {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .header-inner {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 18px 0 14px; flex-wrap: wrap; gap: 8px 24px;
+  }
+  .site-name { font-size: 21px; font-weight: 900; letter-spacing: .18em; }
+  .site-name a { color: var(--ink); text-decoration: none; }
+  .site-name .seal-dot {
+    display: inline-block; width: 10px; height: 10px;
+    background: var(--cinnabar); margin-left: 10px;
+    transform: translateY(-2px) rotate(45deg);
+  }
+  nav.main-nav ul { display: flex; gap: 26px; list-style: none; flex-wrap: wrap; }
+  nav.main-nav a {
+    color: var(--ink); text-decoration: none;
+    font-size: 15.5px; letter-spacing: .12em;
+    padding-bottom: 3px; border-bottom: 2px solid transparent;
+    transition: border-color .2s;
+  }
+  nav.main-nav a:hover, nav.main-nav a:focus-visible { border-bottom-color: var(--cinnabar); outline: none; }
+  nav.main-nav a.current { border-bottom-color: var(--cinnabar); color: var(--cinnabar); }
+
+  .art-head { padding: 64px 0 36px; border-bottom: 1px solid var(--rule); text-align: center; }
+  .art-head .genre {
+    display: inline-block;
+    font-size: 13.5px; letter-spacing: .3em;
+    color: var(--cinnabar);
+    border: 1px solid var(--cinnabar);
+    padding: 2px 14px 2px 17px;
+    margin-bottom: 18px;
+  }
+  .art-head h1 {
+    font-size: clamp(26px, 5vw, 38px);
+    font-weight: 900; letter-spacing: .14em;
+    line-height: 1.6;
+  }
+  .art-head .meta {
+    margin-top: 14px;
+    font-size: 14.5px; color: var(--ink-light);
+    letter-spacing: .06em;
+  }
+  .art-head .meta a { color: var(--cinnabar); text-decoration: none; }
+  .art-head .meta a:hover { text-decoration: underline; }
+
+  .lang-head {
+    display: flex; align-items: center; gap: 14px;
+    margin: 52px 0 26px;
+  }
+  .lang-head img { height: 22px; width: auto; }
+  .lang-head h2 { font-size: 21px; font-weight: 600; letter-spacing: .3em; }
+
+  article p {
+    text-indent: 2em;
+    margin-bottom: 8px;
+  }
+  .notes {
+    margin-top: 30px;
+    padding: 18px 24px;
+    background: #FBF8F0;
+    border: 1px solid var(--rule);
+    font-size: 15px;
+    color: var(--ink-light);
+    line-height: 1.9;
+  }
+  .notes .n-title { letter-spacing: .2em; color: var(--ink); margin-bottom: 6px; font-size: 14px; }
+
+  .back-link {
+    display: inline-block;
+    margin-top: 44px;
+    color: var(--cinnabar);
+    text-decoration: none;
+    font-size: 15.5px;
+    letter-spacing: .1em;
+  }
+  .back-link:hover { text-decoration: underline; }
+
+  footer {
+    padding: 44px 0 56px;
+    color: var(--ink-light);
+    font-size: 14px; letter-spacing: .06em;
+    border-top: 1px solid var(--rule);
+    margin-top: 56px;
+  }
+  footer .wave-foot {
+    height: 22px; width: auto;
+    opacity: .45;
+    display: block;
+    margin-bottom: 14px;
+  }
+  @media (max-width: 640px) { nav.main-nav ul { gap: 16px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="frame header-inner">
+    <div class="site-name"><a href="index.html">曾櫳震</a><span class="seal-dot" aria-hidden="true"></span></div>
+    <nav class="main-nav" aria-label="主選單">
+      <ul>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">關於我</a></li>
+        <li><a href="experience.html">經歷</a></li>
+        <li><a href="publications.html">著作</a></li>
+        <li><a href="writings.html" class="current">文學作品</a></li>
+        <li><a href="interests.html">專長與興趣</a></li>
+        <li><a href="links.html">推薦網站連結</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="reading">
+    <div class="art-head">
+      <span class="genre">客語散文</span>
+      <h1>食一杯人情味个茶</h1>
+      <div class="meta">2023年05月14日　文／曾櫳震<br>同步刊於 <a href="https://hakkanews.tw/2023/05/14/63466/" target="_blank" rel="noopener">【客新聞】</a></div>
+    </div>
+
+    <article>
+      <div class="lang-head"><img src="image/soundwave-cinnabar.png" alt="" aria-hidden="true"><h2>客語原文</h2></div>
+      <p>這下个人係講愛食茶非常方便，儘採行落一間便利商店，就做得看著冰箱肚有各種各樣个茶，綠茶、紅茶、烏龍、膨風茶，排到淰淰一排，有加糖个、無加糖个做盡有，愛食哪種自家擇。雖然係無共樣个茶，食起來確實無相同，毋過𠊎總係試著該兜茶，少了一種味緒，絕對毋係添糖毋添糖个問題。</p>
+      <p>前一駁仔，𠊎對竹東到峨眉尋一個朋友，雖然竹東到峨眉當近，駛車、騎車差毋多二十零分鐘會到，毋過佢摎𠊎講，佢毋係戴峨眉街路，係石井（註1）還較上去个四面崠（註2）。佢驚𠊎尋無路，建議𠊎坐新竹客運，坐到「石井」車牌下車，佢會過來載𠊎。</p>
+      <p>𠊎本本想講，毋好恁麻煩佢䟓工走來載𠊎，𠊎騎奧多拜斯好，毋過佢講佢該位正經盡難尋，喊𠊎坐車較方便。想想乜係，自從會騎車、駛車之後，當久無坐客運車，懷念一下，看看風景也盡好，斯照佢講个做。好得有聽佢个建議，𠊎實在無想著佢該片連Google Map都尋無資料，愛𠊎來尋，怕係朝晨尋到斷烏乜尋路毋著。</p>
+      <p>𫣆俚當久無相見，兩儕單單打嘴鼓、譫哆，斯對當晝坐到會臨暗仔，佢正載𠊎下去「石井」个車牌，好分𠊎坐車轉竹東。</p>
+      <p>毋過到了車牌一看，𠊎強強會昏忒，車仔斯正走忒一枋，下枋愛點半鐘正會來，正經河壩跑馬──壞蹄。平常時个𠊎這種時節會看手機仔，毋過該日𠊎个手機仔強強愛無電咧，斯摎手機仔放落褲袋，坐在車牌脣頭凳仔頂發琢呆。</p>
+      <p>無幾久，𠊎聽著有人遠遠喊𠊎：「細阿哥仔，你敢係等車？這下還無車哦，愛來食杯茶無？」𠊎試著當疑狐，看上看下，仰單單聽著聲定定，無看著人？原來係轉角个地方有一隻涼亭，該片坐等五儕老阿伯，在該泡茶坐尞、打嘴鼓。</p>
+      <p>佢兜知𠊎一儕在車牌坐等，一定係等客運，毋過還有當久車仔正會來，斯擛手喊𠊎過去共下坐，食杯茶來，正毋會嘴渴。佢兜恁熱情，係講𠊎拒絕佢兜，顛倒係𠊎失禮，故所𠊎斯行過去，摎該兜阿伯共下食茶看風景。</p>
+      <p>佢兜摎𠊎講，佢兜以前後生時節斯開始在峨眉種茶，雖然這下老了，毋過佢兜還係逐日擐等䉂公去茶園摘茶、唱山歌準運動，到臨暗仔，佢兜斯會來到這涼亭，共下泡茶坐尞，等到屋下差毋多愛食夜个時節正會轉去。</p>
+      <p>佢兜摘茶、做茶一生人，對茶十分瞭解，緊泡緊摎𠊎紹介，這膨風茶愛仰般種、仰般摘、仰般炒，最尾愛仰般泡，正會好啉，毋會澀澀，落嘴毋得。聽講其中一位阿伯个茶，還係連等幾下（註3）年得獎个冠軍茶！</p>
+      <p>𫣆俚一片泡茶，一片談天，雖然年紀差當多，毋過𠊎兜天南地北，麼个都分享，也順續欣賞對面山頂正開無幾久个油桐花，桐花个白，摎青色个山戴了一頂白雪雪个帽仔，青山看起來還較靚。有好人，有好茶，有好風景，有講有笑，恁仰个風景，實在還靚，係講時間永久停留在這量時，一定當幸福。</p>
+      <p>一坐斯係點半鐘，該兜阿伯摎𠊎講𠊎个車仔愛來咧，佢兜乜愛轉屋食夜咧，希望有閒時節，再過來分佢兜請。𠊎摎佢兜承蒙，毋過乜無麼个好分佢兜，單單𠊎朋友分𠊎个梅仔鹹酸甜做得摎該兜阿伯分享，該兜阿伯意思意思拈幾隻，斯轉屋咧。</p>
+      <p>無幾久，𠊎乜坐著轉竹東个車，在車頂𠊎回想頭先个茶實在好啉，可能「冠軍茶」係原因之一，毋過𠊎想，最關鍵个應該係該杯茶有難得个人情味，這種人情味，在外背愛買乜買毋著。</p>
+      <p>所以，𠊎講𠊎食个係「人情味个茶」，便利商店肚賣个茶乜毋係毋好，就係少了這種難得个人情味。</p>
+
+      <div class="notes">
+        <div class="n-title">註釋</div>
+        （註1）石井，地名，位於峨眉鄉。<br>
+        （註2）四面崠，地名，位於峨眉鄉，接近寶山、峨眉鄉界。華語寫作「四面凸」。<br>
+        （註3）幾下：應兩字合音讀作「gia<sup>+</sup>」，不宜拆作「giˊ haˊ」讀。
+      </div>
+
+      <div class="lang-head"><img src="image/soundwave-cinnabar.png" alt="" aria-hidden="true"><h2>華語語譯</h2></div>
+      <p>現在的人如果要喝茶相當方便，隨意走進一間便利商店，就可以看到冷藏櫃中有五花八門的茶，綠茶、紅茶、烏龍茶、東方美人茶，排得目不暇給，有糖、無糖也應有盡有，喜歡哪種任君挑選。雖然是不一樣的茶，喝起來味道也的確有異，但是我總是覺得這些茶，少了一種味道，這絕對不是加不加糖的問題。</p>
+      <p>前一陣子，我從竹東到峨眉找一位朋友，雖然竹東到峨眉很近，開車、騎車差不多二十餘分鐘就到，但是他跟我說，他不是住在峨眉的鬧區，是石井再往上走的四面凸。他怕我迷路，建議我坐新竹客運，坐到「石井」這一站下車，他會過來載我。我本來心想，不要這麼麻煩他專程跑來載我，我騎機車就好，但是他說他那邊真的很難找，叫我坐車比較方便。想想也是，自從我會騎車、開車以後，很少坐客運，懷念一下，看看風景也很好，就照他說的做。</p>
+      <p>幸好有聽他的建議，我實在難以想像他那邊連Google Map都沒有資料，如果要我自己找路，恐怕從早找到晚都找不到。我們很久沒有見面，兩人單純談天、閒聊，就從中午坐到傍晚，他才把我載回「石井」站牌處，讓我坐車回竹東。不過到了站牌一看，我險些暈過去，客運剛剛才走掉一班，下一班車要一小時半後才會來，真是糟糕異常。平常的我在這種時候會開始滑手機，不過那天我的手機快要沒電了，就把手機放進口袋，坐在站牌旁的矮凳子上發呆。</p>
+      <p>沒過多久，我聽到有人遠遠的叫我：「小少年，你在等車嗎？現在還沒有車喔，要不要來喝杯茶？」我頓感疑惑，看來看去，怎麼只聞其聲不見其人？原來是轉角的地方有一個涼亭，那處坐著五位老伯伯，正在泡茶聊天。</p>
+      <p>他們知道我一個人在站牌旁坐著，一定是等客運，不過還有很久車才會來，就招呼我過去一起坐下，喝杯茶，解解渴。他們好熱情，如果我拒絕他們，反而顯得我很失禮，所以我走過去，跟那些老伯伯一起喝茶看風景。</p>
+      <p>他們跟我說，他們以前年輕時就開始在峨眉種茶，雖然現在老了，不過他們還是每天提著竹茶籃（䉂公：採茶時繫於腰間，用以裝茶葉的竹器，華語無對應詞彙，暫譯竹茶籃）去茶園採茶、唱山歌，當作運動，到傍晚，他們就會來到這個涼亭，一起泡茶談天，等到家裡差不多要吃晚餐時才會回去。他們一輩子摘茶、做茶，對茶瞭如指掌，一邊泡一邊跟我介紹，這東方美人茶要怎樣種、怎樣採、怎樣炒，最後要怎樣泡，才會好喝，不會苦澀、難以下嚥。聽說其中一位老伯伯的茶，還是連續好幾年得獎的冠軍茶！我們一邊泡茶、一邊談天，雖說年紀差距大，但是我們聊天的內容天南地北，無所不談，也順便欣賞對面山上剛開沒多久的油桐花，桐花的白，幫青色的山戴了一頂雪白的帽子，青山看來更加嫵媚。有好人，有好茶，有好光景，有說有笑，這樣的風景，實在美麗，如果時間永遠停留在此刻，一定很幸福。</p>
+      <p>一坐就是一小時半，那些老伯伯跟我說我的車差不多要來了，他們也要回家吃晚餐了，希望有空的時候，再讓他們請喝茶。我對他們道謝，雖然沒什麼好給他們的，只有剛剛我朋友給我的梅子蜜餞跟老伯伯們分享，老伯伯們只是意思的撿了幾個吃，就各自回家了。沒多久，我坐上回竹東的客運，車上的我回憶起剛剛喝的茶實在很好喝，可能「冠軍茶」是其中一個原因，但是我想，最關鍵的應該是那杯茶有難得的人情味，這種人情味，是市面上買不到的。</p>
+      <p>所以，我說我喝的茶是「人情味的茶」，便利商店裡賣的茶也不是不好，但就是少了這種難得的人情味。</p>
+    </article>
+
+    <a class="back-link" href="writings.html">← 返回文學作品目錄</a>
+  </div>
+</main>
+
+<footer>
+  <div class="frame">
+    <img class="wave-foot" src="image/soundwave-ink.png" alt="" aria-hidden="true">
+    © 2026 曾櫳震（Tseng Brian Liungzhin）
+  </div>
+</footer>
+
+</body>
+</html>
