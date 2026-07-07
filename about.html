@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>關於我｜曾櫳震 個人網頁</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Charis+SIL:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F2E7;
+    --paper-deep: #EDE7D6;
+    --ink: #211E19;
+    --ink-light: #6E6659;
+    --cinnabar: #A8382A;
+    --rule: #D8D0BC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif TC', 'Songti TC', 'PMingLiU', '新細明體', serif;
+    line-height: 1.9;
+    font-size: 17px;
+  }
+  .ipa { font-family: 'Charis SIL', 'Gentium Plus', 'Noto Serif TC', serif; }
+  .frame { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  header {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .header-inner {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 18px 0 14px; flex-wrap: wrap; gap: 8px 24px;
+  }
+  .site-name { font-size: 21px; font-weight: 900; letter-spacing: .18em; }
+  .site-name a { color: var(--ink); text-decoration: none; }
+  .site-name .seal-dot {
+    display: inline-block; width: 10px; height: 10px;
+    background: var(--cinnabar); margin-left: 10px;
+    transform: translateY(-2px) rotate(45deg);
+  }
+  nav.main-nav ul { display: flex; gap: 26px; list-style: none; flex-wrap: wrap; }
+  nav.main-nav a {
+    color: var(--ink); text-decoration: none;
+    font-size: 15.5px; letter-spacing: .12em;
+    padding-bottom: 3px; border-bottom: 2px solid transparent;
+    transition: border-color .2s;
+  }
+  nav.main-nav a:hover, nav.main-nav a:focus-visible { border-bottom-color: var(--cinnabar); outline: none; }
+  nav.main-nav a.current { border-bottom-color: var(--cinnabar); color: var(--cinnabar); }
+
+  .page-head { padding: 64px 0 34px; }
+  .page-head h1 {
+    font-size: clamp(30px, 5vw, 42px);
+    font-weight: 900; letter-spacing: .3em;
+  }
+  .wave-mark {
+    height: 26px; width: auto;
+    margin-right: 16px;
+    vertical-align: -3px;
+  }
+  .page-head .page-sub {
+    color: var(--ink-light); font-size: 14px;
+    letter-spacing: .15em; margin-top: 6px;
+  }
+
+  .toc {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    padding: 0 0 34px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .toc a {
+    display: inline-block;
+    padding: 5px 16px;
+    border: 1px solid var(--rule);
+    background: #FBF8F0;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14.5px;
+    letter-spacing: .1em;
+    transition: border-color .15s, color .15s;
+  }
+  .toc a:hover, .toc a:focus-visible {
+    border-color: var(--cinnabar); color: var(--cinnabar); outline: none;
+  }
+
+  section { padding: 52px 0 8px; }
+  .sec-head {
+    display: flex; align-items: baseline; gap: 14px;
+    margin-bottom: 24px;
+  }
+  .sec-head h2 { font-size: 24px; font-weight: 600; letter-spacing: .22em; }
+  .sec-head h2::before {
+    content: '';
+    display: inline-block;
+    width: 9px; height: 9px;
+    background: var(--cinnabar);
+    transform: rotate(45deg);
+    margin-right: 12px;
+    vertical-align: 2px;
+  }
+  .sec-head .sec-sub { font-size: 13px; color: var(--ink-light); letter-spacing: .12em; }
+
+  /* 基本資料表 */
+  .profile-table { border-top: 1px solid var(--rule); }
+  .profile-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 24px;
+    padding: 16px 6px;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .profile-row dt {
+    color: var(--ink-light);
+    font-size: 15px;
+    letter-spacing: .1em;
+  }
+  .profile-row dd { font-size: 17px; }
+  .profile-row dd .big-name {
+    font-size: 24px; font-weight: 900; letter-spacing: .3em;
+  }
+  .profile-row dd .sub-line {
+    display: block; font-size: 15.5px; color: var(--ink-light); margin-top: 2px;
+  }
+
+  /* 學歷時間軸 */
+  .edu-list { list-style: none; border-left: 2px solid var(--rule); margin-left: 8px; }
+  .edu-item { position: relative; padding: 0 0 34px 30px; }
+  .edu-item:last-child { padding-bottom: 8px; }
+  .edu-item::before {
+    content: '';
+    position: absolute;
+    left: -7px; top: 9px;
+    width: 12px; height: 12px;
+    background: var(--paper);
+    border: 2.5px solid var(--cinnabar);
+    transform: rotate(45deg);
+  }
+  .edu-item .edu-period {
+    font-size: 14.5px; color: var(--cinnabar); letter-spacing: .06em;
+  }
+  .edu-item h3 { font-size: 18.5px; font-weight: 600; margin-top: 2px; }
+  .edu-item .edu-en { font-size: 14.5px; color: var(--ink-light); margin-top: 2px; }
+  .thesis-box {
+    margin-top: 14px;
+    padding: 16px 20px;
+    background: var(--paper-deep);
+    border-left: 3px solid var(--cinnabar);
+  }
+  .thesis-box .th-label { font-size: 13.5px; color: var(--ink-light); letter-spacing: .2em; }
+  .thesis-box .th-title { font-size: 17px; font-weight: 600; margin-top: 4px; }
+  .thesis-box .th-en { font-size: 14px; color: var(--ink-light); margin-top: 4px; }
+  .thesis-box .th-links { margin-top: 10px; font-size: 14.5px; }
+  .thesis-box .th-links a { color: var(--cinnabar); text-decoration: none; }
+  .thesis-box .th-links a:hover { text-decoration: underline; }
+
+  /* 學會 */
+  .soc-list { list-style: none; border-top: 1px dashed var(--rule); }
+  .soc-list li {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 16px;
+    padding: 13px 6px;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 16.5px;
+  }
+  .soc-list a {
+    color: var(--cinnabar); text-decoration: none; font-size: 14.5px;
+    white-space: nowrap;
+  }
+  .soc-list a:hover { text-decoration: underline; }
+
+  /* 識別標誌 */
+  .emblem-wrap {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 34px;
+    align-items: start;
+  }
+  .emblem-wrap img {
+    width: 100%;
+    border: 1px solid var(--rule);
+    background: #FBF8F0;
+    padding: 14px;
+  }
+  .emblem-text p { margin-bottom: 14px; font-size: 16.5px; }
+  .emblem-text .cite {
+    padding: 12px 18px;
+    background: #FBF8F0;
+    border-left: 3px solid var(--rule);
+    font-size: 15.5px;
+    color: var(--ink-light);
+    margin-bottom: 14px;
+  }
+
+  /* 理念 */
+  .creed { border-top: 1px dashed var(--rule); }
+  .creed p {
+    padding: 16px 6px;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 16.5px;
+  }
+
+  footer {
+    padding: 44px 0 56px;
+    color: var(--ink-light);
+    font-size: 14px; letter-spacing: .06em;
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+  }
+  footer .wave-foot {
+    height: 22px; width: auto;
+    opacity: .45;
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  @media (max-width: 640px) {
+    nav.main-nav ul { gap: 16px; }
+    .profile-row { grid-template-columns: 1fr; gap: 2px; }
+    .emblem-wrap { grid-template-columns: 1fr; }
+    .emblem-wrap img { max-width: 260px; }
+    .soc-list li { flex-direction: column; gap: 2px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="frame header-inner">
+    <div class="site-name"><a href="index.html">曾櫳震</a><span class="seal-dot" aria-hidden="true"></span></div>
+    <nav class="main-nav" aria-label="主選單">
+      <ul>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html" class="current">關於我</a></li>
+        <li><a href="experience.html">經歷</a></li>
+        <li><a href="publications.html">著作</a></li>
+        <li><a href="writings.html">文學作品</a></li>
+        <li><a href="interests.html">專長與興趣</a></li>
+        <li><a href="links.html">連結</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="frame">
+    <div class="page-head">
+      <h1><img class="wave-mark" src="image/soundwave-cinnabar.png" alt="" aria-hidden="true">關於我</h1>
+      <div class="page-sub">ABOUT — 基本資料・學歷・識別標誌・理念</div>
+    </div>
+
+    <nav class="toc" aria-label="頁內目次">
+      <a href="#profile">基本資料</a>
+      <a href="#education">學歷</a>
+      <a href="#emblem">識別標誌與姓名意涵</a>
+      <a href="#creed">理念</a>
+    </nav>
+
+    <section id="profile">
+      <div class="sec-head"><h2>基本資料</h2><span class="sec-sub">PROFILE</span></div>
+      <dl class="profile-table">
+        <div class="profile-row">
+          <dt>中文姓名</dt>
+          <dd><span class="big-name">曾　櫳震</span></dd>
+        </div>
+        <div class="profile-row">
+          <dt>客語拼音（海陸腔）</dt>
+          <dd class="ipa">部定拼音／zen⁵³ liung⁵⁵ zhin²⁴
+            <span class="sub-line ipa">IPA 國際音標（嚴式）／[tsen⁵³ liuŋ⁵⁵ tʃin²⁴]</span>
+          </dd>
+        </div>
+        <div class="profile-row">
+          <dt>中文姓名音譯</dt>
+          <dd>TSENG, BRIAN LIUNGZHIN
+            <span class="sub-line">（AKA TSENG, Long-Zhen [in Mandarin]）</span>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <section id="education">
+      <div class="sec-head"><h2>學歷</h2><span class="sec-sub">EDUCATION</span></div>
+      <ul class="edu-list">
+        <li class="edu-item">
+          <div class="edu-period">2022 – 2026</div>
+          <h3>國立清華大學 臺灣語言研究與教學研究所 碩士</h3>
+          <div class="edu-en">Master of Ling. at Institute of Taiwan Languages and Language Teaching, National Tsing Hua University (Hsinchu, Taiwan)</div>
+          <div class="thesis-box">
+            <div class="th-label">學位論文 THESIS</div>
+            <div class="th-title">《新竹海陸客華雙語者華語音變現象研究》</div>
+            <div class="th-en">Phonetic characteristics of Hakka Mandarin used among Taiwan Hoi-liug Hakka and Mandarin bilinguals in Hsinchu</div>
+            <div class="th-links">
+              閱覽摘要及全文：博碩士論文系統（國家圖書館）、國立清華大學博碩士論文庫（編目中，尚未公開）
+            </div>
+          </div>
+        </li>
+        <li class="edu-item">
+          <div class="edu-period">2018.09 – 2022.06</div>
+          <h3>國立東華大學 中國語文學系 學士</h3>
+          <div class="edu-en">Bachelor of Arts, Department of Chinese Language and Literature, National Dong Hwa University (Hualien, Taiwan)</div>
+        </li>
+        <li class="edu-item">
+          <div class="edu-period">2015.09 – 2018.06</div>
+          <h3>新竹縣私立內思高級工業職業學校（現內思工業高級中等學校） 資訊科（電機電子群）</h3>
+          <div class="edu-en">Department of Computer Science and Information, St. Aloysius Technical School, Hsinchu County, Taiwan</div>
+        </li>
+        <li class="edu-item">
+          <div class="edu-period">2012.09 – 2015.06</div>
+          <h3>新竹縣立自強國民中學</h3>
+          <div class="edu-en">Hsinchu County Tzu-Chiang Junior High School</div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="emblem">
+      <div class="sec-head"><h2>識別標誌與姓名意涵</h2><span class="sec-sub">EMBLEM &amp; NAME</span></div>
+      <div class="emblem-wrap">
+        <img src="image/emblem.png" alt="曾櫳震個人識別標誌" onerror="this.style.display='none'">
+        <div class="emblem-text">
+          <p>《周易．說卦傳》：「震一索而得男」，家族中排序為長男，故名中有一「震」字。震卦在東，五行屬木，色青，四靈對應青龍，故名中有一「櫳」字，係龍加以木字偏旁而成。</p>
+          <div class="cite">【櫳字在古典文本中的應用範例】宋代話本小說〈碾玉觀音〉季春詞：「先自春光似酒濃，時聽燕語透簾櫳。小橋楊柳飄香絮；山寺緋桃散落紅。」</div>
+          <p>左上龍紋即「櫳」字圖像化；右上三道閃電代表「震」。左下文鳥紋代表文學，星辰紋代表光明；右下獅子紋代表勇氣與堅毅。整體盾牌型代表富有力量抵禦一切困難，勇於前行。左右麥穗象徵以飽滿學識為目標。</p>
+          <p>下以金文書寫座右銘「博學慎思　誠正慈仁」。博學、慎思語本《禮記．中庸》；誠正慈仁則為忠恕之謂。曾子曰：「盡己之謂忠，推己及人之謂恕」，呼應竹東九芎林曾家堂號「忠恕堂」。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="creed">
+      <div class="sec-head"><h2>理念</h2><span class="sec-sub">STATEMENTS</span></div>
+      <div class="creed">
+        <p>本人支持《國家語言發展法》之施行，尊重臺灣、澎湖、金門、馬祖等地區固有族群之語言如臺灣客家語、臺灣閩南語、臺灣原住民族各族語、馬祖閩東語等，皆為平等，並應受尊重，永續傳承。</p>
+        <p>本人支持111課綱將本土語文列為必修。</p>
+        <p>本人願意多加使用、傳承本人之母語臺灣客家語。</p>
+        <p>本人支持婚姻平權以及多元成家。本人認為應尊重各種性別認同及性傾向的人士，並且他們應被平等對待與尊重，故本人支持LGBTQ族群伴侶多元成家，也在保護兒少、培養正確觀念的前提下，支持施行正確的性教育。</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="frame">
+    <img class="wave-foot" src="image/soundwave-ink.png" alt="" aria-hidden="true">
+    © 2026 曾櫳震（Tsên Lûng-tsṳ́n）
+  </div>
+</footer>
+
+</body>
+</html>
