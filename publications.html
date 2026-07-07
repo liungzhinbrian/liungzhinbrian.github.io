@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>著作｜曾櫳震 個人網頁</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Charis+SIL:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F2E7;
+    --paper-deep: #EDE7D6;
+    --ink: #211E19;
+    --ink-light: #6E6659;
+    --cinnabar: #A8382A;
+    --rule: #D8D0BC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif TC', 'Songti TC', 'PMingLiU', '新細明體', serif;
+    line-height: 1.9;
+    font-size: 17px;
+  }
+  .frame { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  header {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .header-inner {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 18px 0 14px; flex-wrap: wrap; gap: 8px 24px;
+  }
+  .site-name { font-size: 21px; font-weight: 900; letter-spacing: .18em; }
+  .site-name a { color: var(--ink); text-decoration: none; }
+  .site-name .seal-dot {
+    display: inline-block; width: 10px; height: 10px;
+    background: var(--cinnabar); margin-left: 10px;
+    transform: translateY(-2px) rotate(45deg);
+  }
+  nav.main-nav ul { display: flex; gap: 26px; list-style: none; flex-wrap: wrap; }
+  nav.main-nav a {
+    color: var(--ink); text-decoration: none;
+    font-size: 15.5px; letter-spacing: .12em;
+    padding-bottom: 3px; border-bottom: 2px solid transparent;
+    transition: border-color .2s;
+  }
+  nav.main-nav a:hover, nav.main-nav a:focus-visible { border-bottom-color: var(--cinnabar); outline: none; }
+  nav.main-nav a.current { border-bottom-color: var(--cinnabar); color: var(--cinnabar); }
+
+  .page-head { padding: 64px 0 34px; }
+  .page-head h1 {
+    font-size: clamp(30px, 5vw, 42px);
+    font-weight: 900; letter-spacing: .3em;
+  }
+  .wave-mark {
+    height: 26px; width: auto;
+    margin-right: 16px;
+    vertical-align: -3px;
+  }
+  .page-head .page-sub {
+    color: var(--ink-light); font-size: 14px;
+    letter-spacing: .15em; margin-top: 6px;
+  }
+
+  .toc {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    padding: 0 0 34px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .toc a {
+    display: inline-block;
+    padding: 5px 16px;
+    border: 1px solid var(--rule);
+    background: #FBF8F0;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14.5px;
+    letter-spacing: .1em;
+    transition: border-color .15s, color .15s;
+  }
+  .toc a:hover, .toc a:focus-visible {
+    border-color: var(--cinnabar); color: var(--cinnabar); outline: none;
+  }
+
+  section { padding: 52px 0 8px; }
+  .sec-head {
+    display: flex; align-items: baseline; gap: 14px;
+    margin-bottom: 24px;
+  }
+  .sec-head h2 { font-size: 24px; font-weight: 600; letter-spacing: .22em; }
+  .sec-head h2::before {
+    content: '';
+    display: inline-block;
+    width: 9px; height: 9px;
+    background: var(--cinnabar);
+    transform: rotate(45deg);
+    margin-right: 12px;
+    vertical-align: 2px;
+  }
+  .sec-head .sec-sub { font-size: 13px; color: var(--ink-light); letter-spacing: .12em; }
+
+  .pub {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 20px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+    background: #FBF8F0;
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--cinnabar);
+  }
+  .pub .pub-year {
+    font-size: 18px; font-weight: 600;
+    color: var(--cinnabar);
+    letter-spacing: .04em;
+  }
+  .pub .pub-title { font-size: 17px; font-weight: 600; line-height: 1.7; }
+  .pub .pub-venue { font-size: 15px; color: var(--ink-light); margin-top: 6px; }
+  .pub .pub-note { font-size: 14.5px; color: var(--ink-light); margin-top: 6px; }
+  .pub a { color: var(--cinnabar); text-decoration: none; }
+  .pub a:hover { text-decoration: underline; }
+
+  footer {
+    padding: 44px 0 56px;
+    color: var(--ink-light);
+    font-size: 14px; letter-spacing: .06em;
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+  }
+  footer .wave-foot {
+    height: 22px; width: auto;
+    opacity: .45;
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  @media (max-width: 640px) {
+    nav.main-nav ul { gap: 16px; }
+    .pub { grid-template-columns: 1fr; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="frame header-inner">
+    <div class="site-name"><a href="index.html">曾櫳震</a><span class="seal-dot" aria-hidden="true"></span></div>
+    <nav class="main-nav" aria-label="主選單">
+      <ul>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">關於我</a></li>
+        <li><a href="experience.html">經歷</a></li>
+        <li><a href="publications.html" class="current">著作</a></li>
+        <li><a href="writings.html">文學作品</a></li>
+        <li><a href="interests.html">專長與興趣</a></li>
+        <li><a href="links.html">連結</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="frame">
+    <div class="page-head">
+      <h1><img class="wave-mark" src="image/soundwave-cinnabar.png" alt="" aria-hidden="true">學術報告或計畫、著作</h1>
+      <div class="page-sub">PUBLICATIONS — 會議論文・期刊論文・專書與出版品・研究計畫</div>
+    </div>
+
+    <nav class="toc" aria-label="頁內目次">
+      <a href="#conference">會議論文</a>
+      <a href="#journal">期刊論文</a>
+      <a href="#books">專書與出版品</a>
+      <a href="#projects">計畫</a>
+    </nav>
+
+    <section id="conference">
+      <div class="sec-head"><h2>會議論文</h2><span class="sec-sub">CONFERENCE PAPERS</span></div>
+
+      <div class="pub">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">「往生」一詞的詞彙化及其在臺灣閩、客、華語中之使用情況</div>
+          <div class="pub-venue">曾櫳震（2025）。第九屆青年學者台灣語文學術研討會，彰化：國立彰化師範大學，2025/11/22。</div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title">臺灣客語流行歌曲中之四海話現象</div>
+          <div class="pub-venue">曾櫳震（2025）。第25屆客家研究研究生學術研討會，桃園：國立中央大學，2025/9/20。</div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2023</div>
+        <div>
+          <div class="pub-title">初探高中本土語課程對學生母語意識之影響──以新竹地區學生為例</div>
+          <div class="pub-venue">曾櫳震、彭桓恩（2023）。第四屆本土語言研討會暨教案競賽，新竹：國立清華大學，2023/11/18。</div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2023</div>
+        <div>
+          <div class="pub-title">臺灣華語的中古舒聲韻通攝字語音現象研究</div>
+          <div class="pub-venue">曾櫳震（2023）。第八屆青年學者台灣語文學術研討會，新竹：國立清華大學，2023/10/13。</div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2022</div>
+        <div>
+          <div class="pub-title">新竹地區青年層海陸客語在語言接觸下的音變現象</div>
+          <div class="pub-venue">曾櫳震（2022）。第十四屆台灣語言及其教學國際學術研討會，台南：國立成功大學，2022/08/27。</div>
+          <div class="pub-note">全文收錄於會議論文集《多聲道的台灣共同體：跨語域交織的主體性和創造性》，陳麗君（2023：333–394）。ISBN：9789865635787。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="journal">
+      <div class="sec-head"><h2>期刊論文</h2><span class="sec-sub">JOURNAL ARTICLES</span></div>
+
+      <div class="pub">
+        <div class="pub-year">2024</div>
+        <div>
+          <div class="pub-title">〈2024性別友善自在營後記──孰知正處？萬法同歸一乘的利他精神〉</div>
+          <div class="pub-venue">曾櫳震（2024）。收於《弘誓雙月刊》190期（2024/08），頁54–58，桃園：財團法人弘誓文教基金會。</div>
+          <div class="pub-note">DocID：P20121213001-N202408280010-00005｜<a href="https://www.airitilibrary.com/Article/Detail/P20121213001-N202408280010-00005" target="_blank" rel="noopener">華藝線上圖書館 →</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="books">
+      <div class="sec-head"><h2>專書與出版品</h2><span class="sec-sub">BOOKS &amp; PUBLICATIONS</span></div>
+
+      <div class="pub">
+        <div class="pub-year">2021</div>
+        <div>
+          <div class="pub-title">《逆流 Upstream》</div>
+          <div class="pub-venue">徐悅玲、曾子穎、曾櫳震 合著。出版者：曾櫳震，2021年12月。ISBN：9789574396191。</div>
+          <div class="pub-note">國立東華大學人文社會科學學院高教深耕課程「宗教與在地：新城神社舊址古蹟之活化呈現與實踐」小組作品集。</div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2021</div>
+        <div>
+          <div class="pub-title">《現代客家語的時移世異：臺灣客家語海陸腔詞彙的青年使用情形初探──以新竹地區海陸腔為例》</div>
+          <div class="pub-venue">曾櫳震 著。2021年05月二版。ISBN：9789574385904。</div>
+          <div class="pub-note">【國立東華大學自主學習培力計畫】專案補助學術著作。</div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2021</div>
+        <div>
+          <div class="pub-title">《韻鏡》</div>
+          <div class="pub-venue">（宋）張麟之校正刊行；（宋）張慶元重刊；曾櫳震 編。2021年05月初版。ISBN：9789574389100。</div>
+          <div class="pub-note">【國立東華大學自主學習培力計畫】專案補助出版品。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="sec-head"><h2>計畫</h2><span class="sec-sub">PROJECTS</span></div>
+
+      <div class="pub">
+        <div class="pub-year">2021</div>
+        <div>
+          <div class="pub-title">國立東華大學教學卓越中心自主學習培力計畫（語言學概論）</div>
+          <div class="pub-venue">執行期間：2021.03–2021.06。</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="frame">
+    <img class="wave-foot" src="image/soundwave-ink.png" alt="" aria-hidden="true">
+    © 2026 曾櫳震（Tsên Lûng-tsṳ́n）
+  </div>
+</footer>
+
+</body>
+</html>
