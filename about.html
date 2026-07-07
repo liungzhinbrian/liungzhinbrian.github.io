@@ -113,6 +113,40 @@
   }
   .sec-head .sec-sub { font-size: 13px; color: var(--ink-light); letter-spacing: .12em; }
 
+  /* 基本資料:左表右圖 */
+  .profile-wrap {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 44px;
+    align-items: start;
+  }
+  .portrait {
+    width: 100%;
+    border: 1px solid var(--rule);
+    background: #FBF8F0;
+    padding: 10px;
+  }
+  @media (max-width: 720px) {
+    .profile-wrap { grid-template-columns: 1fr; }
+    .portrait { max-width: 260px; margin: 0 auto; }
+  }
+
+  /* 基本資料:左圖右表 */
+  .profile-wrap {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+  }
+  .portrait {
+    flex: 0 0 auto;
+    width: 240px;
+    height: auto;
+    border: 1px solid var(--rule);
+    background: #FBF8F0;
+    padding: 8px;
+  }
+  .profile-table { flex: 1 1 auto; min-width: 0; }
+
   /* 基本資料表 */
   .profile-table { border-top: 1px solid var(--rule); }
   .profile-row {
@@ -271,24 +305,27 @@
 
     <section id="profile">
       <div class="sec-head"><h2>基本資料</h2><span class="sec-sub">PROFILE</span></div>
-      <dl class="profile-table">
-        <div class="profile-row">
-          <dt>中文姓名</dt>
-          <dd><span class="big-name">曾　櫳震</span></dd>
-        </div>
-        <div class="profile-row">
-          <dt>客語拼音（海陸腔）</dt>
-          <dd class="ipa">教育部客語拼音／zen⁵³ liung⁵⁵ zhin²⁴
-            <span class="sub-line ipa">IPA 國際音標／[tsen⁵³ liuŋ⁵⁵ tʃin²⁴]</span>
-          </dd>
-        </div>
-        <div class="profile-row">
-          <dt>中文姓名音譯</dt>
-          <dd>TSENG, BRIAN LIUNGZHIN
-            <span class="sub-line">（AKA TSENG, Long-Zhen [in Mandarin]）</span>
-          </dd>
-        </div>
-      </dl>
+      <div class="profile-wrap">
+        <dl class="profile-table">
+          <div class="profile-row">
+            <dt>中文姓名</dt>
+            <dd><span class="big-name">曾　櫳震</span></dd>
+          </div>
+          <div class="profile-row">
+            <dt>客語拼音（海陸腔）</dt>
+            <dd class="ipa">教育部客語拼音／zen⁵³ liung⁵⁵ zhin²⁴
+              <span class="sub-line ipa">IPA 國際音標／[tsen⁵³ liuŋ⁵⁵ tʃin²⁴]</span>
+            </dd>
+          </div>
+          <div class="profile-row">
+            <dt>中文姓名音譯</dt>
+            <dd>TSENG, BRIAN LIUNGZHIN
+              <span class="sub-line">（AKA TSENG, Long-Zhen [in Mandarin]）</span>
+            </dd>
+          </div>
+        </dl>
+        <img class="portrait" src="image/portrait.jpg" alt="曾櫳震形象照" onerror="this.style.display='none'">
+      </div>
     </section>
 
     <section id="education">
