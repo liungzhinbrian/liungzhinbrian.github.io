@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>經歷｜曾櫳震 個人網頁</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Charis+SIL:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F2E7;
+    --paper-deep: #EDE7D6;
+    --ink: #211E19;
+    --ink-light: #6E6659;
+    --cinnabar: #A8382A;
+    --rule: #D8D0BC;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Serif TC', 'Songti TC', 'PMingLiU', '新細明體', serif;
+    line-height: 1.9;
+    font-size: 17px;
+  }
+  .frame { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  header {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+    position: sticky; top: 0; z-index: 10;
+  }
+  .header-inner {
+    display: flex; align-items: baseline; justify-content: space-between;
+    padding: 18px 0 14px; flex-wrap: wrap; gap: 8px 24px;
+  }
+  .site-name { font-size: 21px; font-weight: 900; letter-spacing: .18em; }
+  .site-name a { color: var(--ink); text-decoration: none; }
+  .site-name .seal-dot {
+    display: inline-block; width: 10px; height: 10px;
+    background: var(--cinnabar); margin-left: 10px;
+    transform: translateY(-2px) rotate(45deg);
+  }
+  nav.main-nav ul { display: flex; gap: 26px; list-style: none; flex-wrap: wrap; }
+  nav.main-nav a {
+    color: var(--ink); text-decoration: none;
+    font-size: 15.5px; letter-spacing: .12em;
+    padding-bottom: 3px; border-bottom: 2px solid transparent;
+    transition: border-color .2s;
+  }
+  nav.main-nav a:hover, nav.main-nav a:focus-visible { border-bottom-color: var(--cinnabar); outline: none; }
+  nav.main-nav a.current { border-bottom-color: var(--cinnabar); color: var(--cinnabar); }
+
+  .page-head {
+    padding: 64px 0 34px;
+  }
+  .page-head h1 {
+    font-size: clamp(30px, 5vw, 42px);
+    font-weight: 900; letter-spacing: .3em;
+  }
+  .wave-mark {
+    height: 26px; width: auto;
+    margin-right: 16px;
+    vertical-align: -3px;
+  }
+  .page-head .page-sub {
+    color: var(--ink-light); font-size: 14px;
+    letter-spacing: .15em; margin-top: 6px;
+  }
+
+  /* 頁內目次 */
+  .toc {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    padding: 0 0 34px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .toc a {
+    display: inline-block;
+    padding: 5px 16px;
+    border: 1px solid var(--rule);
+    background: #FBF8F0;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 14.5px;
+    letter-spacing: .1em;
+    transition: border-color .15s, color .15s;
+  }
+  .toc a:hover, .toc a:focus-visible {
+    border-color: var(--cinnabar); color: var(--cinnabar); outline: none;
+  }
+
+  section { padding: 52px 0 8px; }
+  .sec-head {
+    display: flex; align-items: baseline; gap: 14px;
+    margin-bottom: 24px;
+  }
+  .sec-head h2 {
+    font-size: 24px; font-weight: 600; letter-spacing: .22em;
+  }
+  .sec-head h2::before {
+    content: '';
+    display: inline-block;
+    width: 9px; height: 9px;
+    background: var(--cinnabar);
+    transform: rotate(45deg);
+    margin-right: 12px;
+    vertical-align: 2px;
+  }
+  .sec-head .sec-sub {
+    font-size: 13px; color: var(--ink-light); letter-spacing: .12em;
+  }
+
+  /* 條列 */
+  .exp-list { list-style: none; border-top: 1px dashed var(--rule); }
+  .exp-list li {
+    padding: 11px 6px;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 16.5px;
+  }
+  .exp-list li .dur { color: var(--ink-light); font-size: 14.5px; white-space: nowrap; }
+
+  /* 現任:突出處理 */
+  .now-list { list-style: none; }
+  .now-list li {
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    background: var(--paper-deep);
+    border-left: 3px solid var(--cinnabar);
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .now-list li .dur { font-weight: 400; color: var(--ink-light); font-size: 14.5px; }
+
+  /* 教學經驗主條目 */
+  .teach-main {
+    padding: 18px 22px;
+    background: var(--paper-deep);
+    border-left: 3px solid var(--cinnabar);
+    margin-bottom: 16px;
+  }
+  .teach-main .t-title { font-size: 17.5px; font-weight: 600; }
+  .teach-main .t-en { font-size: 14px; color: var(--ink-light); margin-top: 4px; }
+
+  /* 摺疊明細 */
+  details {
+    border: 1px solid var(--rule);
+    background: #FBF8F0;
+    margin-bottom: 14px;
+  }
+  summary {
+    cursor: pointer;
+    padding: 12px 18px;
+    font-size: 15.5px;
+    letter-spacing: .08em;
+    color: var(--cinnabar);
+    user-select: none;
+    list-style: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before {
+    content: '▸';
+    margin-right: 10px;
+    display: inline-block;
+    transition: transform .15s;
+  }
+  details[open] summary::before { transform: rotate(90deg); }
+  .detail-body { padding: 4px 22px 20px; }
+  .term { margin-top: 18px; }
+  .term:first-child { margin-top: 0; }
+  .term h4 {
+    font-size: 15.5px; font-weight: 600;
+    letter-spacing: .08em;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 8px;
+  }
+  .term h4 .t-range { font-weight: 400; color: var(--ink-light); font-size: 13.5px; margin-left: 10px; }
+  .term ul { list-style: none; }
+  .term li { padding: 3px 0; font-size: 15.5px; }
+  .term li .cls { color: var(--ink-light); font-size: 14px; }
+
+  footer {
+    padding: 44px 0 56px;
+    color: var(--ink-light);
+    font-size: 14px; letter-spacing: .06em;
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+  }
+  footer .wave-foot {
+    height: 22px; width: auto;
+    opacity: .45;
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  @media (max-width: 640px) {
+    nav.main-nav ul { gap: 16px; }
+    .exp-list li { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="frame header-inner">
+    <div class="site-name"><a href="index.html">曾櫳震</a><span class="seal-dot" aria-hidden="true"></span></div>
+    <nav class="main-nav" aria-label="主選單">
+      <ul>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">關於我</a></li>
+        <li><a href="experience.html" class="current">經歷</a></li>
+        <li><a href="publications.html">著作</a></li>
+        <li><a href="writings.html">文學作品</a></li>
+        <li><a href="interests.html">專長與興趣</a></li>
+        <li><a href="links.html">連結</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="frame">
+    <div class="page-head">
+      <h1><img class="wave-mark" src="image/soundwave-cinnabar.png" alt="" aria-hidden="true">經歷</h1>
+      <div class="page-sub">EXPERIENCE — 現職・教學・服務・幹部・獲獎・學術活動・證照</div>
+    </div>
+
+    <nav class="toc" aria-label="頁內目次">
+      <a href="#now">現任</a>
+      <a href="#teaching">教學經驗</a>
+      <a href="#service">服務與工作經歷</a>
+      <a href="#leadership">幹部經歷</a>
+      <a href="#awards">獲獎紀錄</a>
+      <a href="#academic">學術活動參與</a>
+      <a href="#certificates">證照檢定</a>
+    </nav>
+
+    <section id="now">
+      <div class="sec-head"><h2>現任</h2><span class="sec-sub">CURRENT</span></div>
+      <ul class="now-list">
+        <li>客家委員會 語言類客語薪傳師</li>
+        <li>客家委員會 客家青年諮詢委員會 第一屆委員 <span class="dur">（2025.01.01 起）</span></li>
+      </ul>
+    </section>
+
+    <section id="teaching">
+      <div class="sec-head"><h2>教學經驗</h2><span class="sec-sub">TEACHING</span></div>
+      <div class="teach-main">
+        <div class="t-title">新竹市立建功高級中學 國中部・高中部 客語文兼任教師（2022–2024）</div>
+        <div class="t-en">High School Teacher, Hsinchu Municipal Chien-Kung Senior High School (Subject: Taiwanese Hakka Language and Literature)</div>
+      </div>
+      <details>
+        <summary>開課紀錄（111–112 學年度，共 4 學期）</summary>
+        <div class="detail-body">
+          <div class="term">
+            <h4>111 學年度 第 1 學期<span class="t-range">2022.09–2023.01</span></h4>
+            <ul>
+              <li>國中客語文Ⅰ <span class="cls">（國一甲、乙、丙｜Grade 7, Class A–C）</span></li>
+              <li>高中客語文Ⅰ <span class="cls">（高一甲、乙｜Grade 10, Class A–B）</span></li>
+            </ul>
+          </div>
+          <div class="term">
+            <h4>111 學年度 第 2 學期<span class="t-range">2023.02–2023.06</span></h4>
+            <ul>
+              <li>國中客語文Ⅱ <span class="cls">（國一甲、乙、丙｜Grade 7, Class A–C）</span></li>
+              <li>高中客語文Ⅱ <span class="cls">（高一甲、乙｜Grade 10, Class A–B）</span></li>
+            </ul>
+          </div>
+          <div class="term">
+            <h4>112 學年度 第 1 學期<span class="t-range">2023.09–2024.01</span></h4>
+            <ul>
+              <li>國中客語文Ⅰ <span class="cls">（國一甲、乙、丙、丁｜Grade 7, Class A–D）</span></li>
+              <li>國中客語文Ⅲ <span class="cls">（國二甲、乙、丙｜Grade 8, Class A–C）</span></li>
+              <li>高中客語文Ⅰ <span class="cls">（高一甲、乙｜Grade 10, Class A–B）</span></li>
+            </ul>
+          </div>
+          <div class="term">
+            <h4>112 學年度 第 2 學期<span class="t-range">2024.02–2024.06</span></h4>
+            <ul>
+              <li>國中客語文Ⅱ <span class="cls">（國一甲、乙、丙、丁｜Grade 7, Class A–D）</span></li>
+              <li>國中客語文Ⅳ <span class="cls">（國二甲、乙、丙｜Grade 8, Class A–C）</span></li>
+              <li>高中客語文Ⅱ <span class="cls">（高一甲、乙｜Grade 10, Class A–B）</span></li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </section>
+
+    <section id="service">
+      <div class="sec-head"><h2>服務與工作經歷</h2><span class="sec-sub">SERVICE &amp; WORK</span></div>
+      <ul class="exp-list">
+        <li>客家委員會 115年客家藝文競賽 客語能力對話競賽 評審委員</li>
+        <li>客家委員會 114年客家藝文競賽 客語能力對話競賽 評審委員</li>
+        <li>文化部補助 國立中央大學出版品《來去學客語（海陸腔）初級》教材錄音員</li>
+        <li>客家委員會委託 臺北市立大學辦理中小學客語線上學習計畫【來上客】教材錄音員</li>
+        <li>新竹市立建功高級中學辦理112學年度校內國語文競賽 客家語演說國中組評審委員</li>
+        <li>新竹市立建功高級中學辦理111學年度本土語文課程專題【聆聽土地的聲音 克里夫專題講座】講座總召集人</li>
+        <li>新竹市立建功高級中學辦理111學年度本土語文課程專題【台灣的閩客文化交響曲 南八管及八音聆賞】講座總召集人</li>
+        <li>國立東華大學民族語言傳播學系 孫嘉穗教授短期兼任研究助理 <span class="dur">（2021.04.01–2021.06.25）</span></li>
+        <li>教育部國教署委託國立東華大學中國語文學系李正芬教授執行109學年度國中小國語文學習扶助學生教材研發計畫 計畫兼任助理 <span class="dur">（2021.01–2021.02）</span></li>
+        <li>國立東華大學中國語文學系學生會 112級會務顧問 <span class="dur">（2020.07–2021.06）</span></li>
+        <li>國立東華大學中國語文學系漢語聲韻學相關學科自主學習社群 召集人／兼任課業輔導助教 <span class="dur">（2020.09–2021.06）</span></li>
+        <li>新竹縣政府稅務局（原稅捐稽徵局）竹東分局 大專學生暑期公部門工讀計畫 <span class="dur">（2020.07.07–2020.08.31）</span></li>
+        <li>國立東華大學中國語文學系學生會選舉委員會 主任委員 <span class="dur">（2020.03–2020.06）</span></li>
+        <li>國立東華大學中國語文學系2020中文盃羽球比賽 總召集人 <span class="dur">（2020.03–2020.06）</span></li>
+        <li>108學年度國立東華大學中國語文學系系務會議 系學生代表 <span class="dur">（2019.09–2020.06）</span></li>
+        <li>108學年度國立東華大學中國語文學系系課程委員會 系學生代表 <span class="dur">（2019.09–2020.06）</span></li>
+        <li>108學年度國立東華大學人文社會科學學院院務會議 院學生代表 <span class="dur">（2019.09–2020.06）</span></li>
+        <li>108學年度國立東華大學人文社會科學學院院課程委員會 院學生委員 <span class="dur">（2019.09–2020.06）</span></li>
+        <li>108學年度國立東華大學中國語文學系學生學習成效評量委員會 系學生代表 <span class="dur">（2019.09–2020.06）</span></li>
+        <li>國立東華大學中國語文學系學生會 111級會長 <span class="dur">（2019.06–2020.06）</span></li>
+        <li>國立東華大學2019中國語文學系、應用數學系、熱舞社聯合聖誕晚會 中文系代表人 <span class="dur">（2019.10–2019.12）</span></li>
+        <li>國立東華大學中國語文學系2019師生冬至聯歡晚會 總召集人 <span class="dur">（2019.11–2019.12.31）</span></li>
+        <li>國立東華大學中國語文學系2019師生中秋晚會活動 總召集人 <span class="dur">（2019.09.10–2019.10.10）</span></li>
+        <li>國立東華大學中國語文學系112級新生迎新活動 總召集人 <span class="dur">（2019.06–2019.10）</span></li>
+        <li>國立東華大學中國語文學系新設學生會籌備處 總召集人 <span class="dur">（2019.03–2019.06）</span></li>
+      </ul>
+    </section>
+
+    <section id="leadership">
+      <div class="sec-head"><h2>幹部經歷</h2><span class="sec-sub">LEADERSHIP</span></div>
+      <ul class="exp-list">
+        <li>新竹縣私立內思高工臨時學生聯席會主席</li>
+        <li>新竹縣私立內思高工學生會組織章程修訂人</li>
+        <li>新竹縣私立內思高工學生會第一屆會長</li>
+        <li>國立東華大學中國語文學系新設學生會籌備處總召集人</li>
+        <li>國立東華大學中國語文學系新設學生會組織章程修訂人</li>
+        <li>國立東華大學中國語文學系111級學生會會長</li>
+        <li>國立東華大學中國語文學系112級學生會會務顧問</li>
+        <li>國立東華大學中國語文學系2021高中生大學體驗營計畫計畫主持人</li>
+        <li>國立東華大學中國語文學系2021高中生大學生體驗營籌備委員會主任委員</li>
+      </ul>
+    </section>
+
+    <section id="awards">
+      <div class="sec-head"><h2>獲獎紀錄</h2><span class="sec-sub">AWARDS</span></div>
+      <ul class="exp-list">
+        <li>105年新竹縣國語文競賽客家語朗讀高中組（北四縣腔）第五名</li>
+        <li>教育部高級中等學校學生新世紀領導人才培育計畫第15期中階結訓</li>
+        <li>107年國立東華大學菁英學生入學獎學金</li>
+        <li>108年花蓮縣語文競賽客家語朗讀社會組（海陸腔）第二名</li>
+        <li>109年花蓮縣語文競賽客家語朗讀社會組（海陸腔）特優第一名</li>
+        <li>獲花蓮縣政府推薦代表花蓮縣參加109年全國語文競賽客家語朗讀社會組競賽</li>
+        <li>109年全國語文競賽客家語朗讀社會組（海陸腔）全國優等</li>
+        <li>110年全國大專校院學生本國語文競賽客家語演說（海陸腔）全國第三</li>
+        <li>110年全國語文競賽客家語朗讀社會組（海陸腔）全國優等</li>
+        <li>111年新竹市語文競賽客家語朗讀社會組（海陸腔）第一名</li>
+        <li>111年全國語文競賽客家語朗讀社會組（海陸腔）全國優等</li>
+      </ul>
+    </section>
+
+    <section id="academic">
+      <div class="sec-head"><h2>學術活動參與</h2><span class="sec-sub">ACADEMIC ACTIVITIES</span></div>
+      <p style="font-size:14.5px; color:var(--ink-light); margin-bottom:14px;">學術活動參與紀錄（非論文發表紀錄）</p>
+      <ul class="exp-list">
+        <li>第七屆臺大成大東華三校論壇學術研討會，2018，國立東華大學。</li>
+        <li>2019文的脈動：傳衍，越界，轉譯－國際學術研討會，2019，國立東華大學、台灣中文學會。</li>
+        <li>2020中華民國聲韻學學會會員大會暨學術演講會（李壬癸院士講座－歷史語言學與聲韻學研究），2020，東吳大學、中華民國聲韻學學會。</li>
+        <li>第21屆全國語言學論文研討會，2021，國立中山大學、臺灣語言學學會。</li>
+        <li>第31屆中國文字學國際學術研討會，2021，國立東華大學、中華民國文字學學會。</li>
+        <li>國立東華大學中國語文學系2021後山文匯研究生學術研討會，2021，國立東華大學。</li>
+        <li>2021年馬來西亞－臺灣漢語方言國際學術研討會，2021，馬來亞大學中文系（馬來西亞）、中央研究院（臺灣）。</li>
+        <li>語言田野調查經驗分享會，2021，國立台灣師範大學、中華民國聲韻學學會。</li>
+        <li>2021國家語言發展會議第五場分場論壇【議題一：國家語言尊榮感】，文化部。</li>
+        <li>2021國家語言發展會議第六場分場論壇【議題二：國家語言生活化】，文化部。</li>
+        <li>2021國家語言發展會議第七場分場論壇【議題四：國家語言應用力】，文化部。</li>
+        <li>2021國家語言發展會議第八場分場論壇【議題三：國家語言學習力】，文化部。</li>
+        <li>第19屆國際暨第39屆全國聲韻學學術研討會、中華民國聲韻學學會2021會員大會暨第四屆韓漢語言學國際學術會議聯合會議，2021，國立台灣師範大學、中華民國聲韻學學會。</li>
+        <li>客家語言發展法草案學術交流暨地方公民論壇【花蓮場】，2021，客家委員會、國立東華大學。</li>
+        <li>第七屆客家語文學術研討會，2021，國立中央大學、台灣客家語文學會。</li>
+        <li>2021國家語言發展會議正式大會，文化部。</li>
+        <li>第七屆青年學者台灣語言學術研討會暨台灣語文學會成立三十週年慶祝大會，2021，國立台灣師範大學、台灣語文學會。</li>
+        <li>第十四屆台灣語言及其教學暨台灣學『蛻變的聲音』國際學術研討會，2022，國立成功大學、台灣語文學會。</li>
+        <li>第22屆客家研究研究生學術論文研討會，2022，國立中央大學、台灣客家語文學會。</li>
+        <li>發展母語做主體ê多語文教育工作坊，2023，國立成功大學、台灣語文學會。</li>
+        <li>漢字與語言表記國際學術研討會，2024，政治大學。</li>
+        <li>洪惟仁教授專題講座：從方言地圖看唐山過台灣，2024，東海大學、台灣語文學會。</li>
+        <li>第七屆青年學者台灣語言學術研討會，2024，國立清華大學、台灣語文學會。</li>
+        <li>第八屆客家語文學術研討會，2024，國立中央大學、台灣客家語文學會。</li>
+      </ul>
+    </section>
+
+    <section id="certificates">
+      <div class="sec-head"><h2>證照檢定</h2><span class="sec-sub">CERTIFICATES</span></div>
+      <ul class="exp-list">
+        <li>客家委員會 客語能力認證四縣腔初級</li>
+        <li>客家委員會 客語能力認證海陸腔初級</li>
+        <li>客家委員會 客語能力認證四縣腔中高級</li>
+        <li>客家委員會 客語能力認證海陸腔中高級</li>
+        <li>客家委員會 客語薪傳師（語言類）（2025）</li>
+        <li>CWT全民中文能力檢定 中等</li>
+        <li>勞動部 工業電子丙級技術士證</li>
+        <li>勞動部 電腦軟體應用丙級技術士證</li>
+        <li>PVQC專業英文（電機電子群）</li>
+        <li>國立東華大學教學助理（Teaching Assistant）培訓證書</li>
+        <li>教育部國民及學前教育署110年高級中等學校閩客暨閩東語文教學支援工作人員資格</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="frame">
+    <img class="wave-foot" src="image/soundwave-ink.png" alt="" aria-hidden="true">
+    © 2026 曾櫳震（Tsên Lûng-tsṳ́n）
+  </div>
+</footer>
+
+</body>
+</html>
