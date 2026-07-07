@@ -34,7 +34,13 @@
     display: flex; align-items: baseline; justify-content: space-between;
     padding: 18px 0 14px; flex-wrap: wrap; gap: 8px 24px;
   }
-  .site-name { font-size: 21px; font-weight: 900; letter-spacing: .18em; }
+  .site-name { font-size: 19px; font-weight: 900; letter-spacing: .14em; }
+  .site-name .en {
+    font-size: 11.5px; font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: .3em;
+    margin-left: 10px;
+  }
   .site-name a { color: var(--ink); text-decoration: none; }
   .site-name .seal-dot {
     display: inline-block; width: 10px; height: 10px;
@@ -124,7 +130,7 @@
 
 <header>
   <div class="frame header-inner">
-    <div class="site-name"><a href="index.html">曾櫳震</a><span class="seal-dot" aria-hidden="true"></span></div>
+    <div class="site-name"><a href="index.html">櫳震的個人網頁<span class="en">Brian's Website</span></a><span class="seal-dot" aria-hidden="true"></span></div>
     <nav class="main-nav" aria-label="主選單">
       <ul>
         <li><a href="index.html">首頁</a></li>
